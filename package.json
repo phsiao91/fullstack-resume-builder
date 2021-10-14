@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.15",
+    "client": "^0.0.1",
+    "use-history": "^1.4.1"
+  }
+}
