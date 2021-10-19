@@ -1,16 +1,16 @@
 import React, {useState, useEffect} from "react";
 // import DatePicker from 'react-date-picker';
-// import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 
 function WorkHistory() {
 
-    // const history = useHistory()
+    const history = useHistory()
 
-    // const routeChange = () => {
-    //     let path = "/skills"
-    //     history.push(path)
-    // }
+    const routeChange = () => {
+        let path = "/educations"
+        history.push(path)
+    }
 
     const [title, setTitle] = useState("")
     const [company, setCompany] = useState("")
@@ -82,12 +82,7 @@ function WorkHistory() {
 
     return(
         <div>
-            <div className="blockquote-wrapper">
-                <div className="blockquote">
-                    <p>{quote.text}</p>
-                    <p>{quote.author}</p>
-                </div>
-            </div>
+            
             <form onSubmit={handleSubmit}>
                 <h1>Work History</h1>
                     <label htmlFor="title">title</label>
@@ -126,10 +121,16 @@ function WorkHistory() {
                         value={details}
                         onChange={(e) => setDetails(e.target.value)}/>
                     <button type="submit">Save</button>
-                    {/* <p className="route">
-                        <button className="router" onClick={routeChange} >Next Skills</button>
-                    </p> */}
+                    <p className="route">
+                        <button className="router" onClick={routeChange} >Next Education</button>
+                    </p>
                 </form>
+            </div>
+            <div className="blockquote-wrapper">
+                <div className="blockquote">
+                    <h2>{quote.text}</h2>
+                    <h4>{quote.author}</h4>
+                </div>
             </div>
         </div>
     )

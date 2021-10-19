@@ -12,7 +12,7 @@ function Bio() {
     let history = useHistory()
 
     let routeChange = () => {
-        let path = "/workhistories"
+        let path = "/introductions"
         history.push(path)
     }
 
@@ -21,7 +21,7 @@ function Bio() {
     const [address, setAddress] = useState("")
     const [phone, setPhone] = useState("")
     const [email, setEmail] = useState("")
-    const [linkedin, setLinkedin] = useState("")
+    const [github, setGithub] = useState("")
     const [image, setImage] = useState("")
     const [quote, setQuote] = useState([])
 
@@ -41,7 +41,7 @@ function Bio() {
                     address,
                     phone,
                     email,
-                    linkedin
+                    github
                 }),
             }).then(res => {
                 if (res.ok) {
@@ -91,12 +91,7 @@ function Bio() {
 
     return(
         <div className="bioForm">
-            <div className="blockquote-wrapper">
-                <div className="blockquote">
-                    <p>{quote.text}</p>
-                    <p>{quote.author}</p>
-                </div>
-            </div>
+            
             <form onSubmit={handleSubmit}>
                 <h1>Bio</h1>
                 <label htmlFor="image">image</label>
@@ -129,18 +124,23 @@ function Bio() {
                         name="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}/>
-                    <label>linkedin</label>
+                    <label>github</label>
                     <input 
                         type="text"
-                        name="linkedin"
-                        value={linkedin}
-                        onChange={(e) => setLinkedin(e.target.value)}/>
+                        name="github"
+                        value={github}
+                        onChange={(e) => setGithub(e.target.value)}/>
                     <button type="submit" >Save</button>
                 <p className="route">
-                    <button className="router" onClick={routeChange} >Next Work History</button>
+                    <button className="router" onClick={routeChange} >Next Summary</button>
                 </p>
             </form>
-            
+            <div className="blockquote-wrapper">
+                <div className="blockquote">
+                    <h2>{quote.text}</h2>
+                    <h4>{quote.author}</h4>
+                </div>
+            </div>
         </div>
     )
 }

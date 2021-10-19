@@ -26,6 +26,6 @@ class BiosController < ApplicationController
     private
 
     def bio_params
-        params.permit(:image, :name, :address, :phone, :email, :linkedin, :user_id)
+        params.permit(:image, :name, :address, :phone, :email, :github, :user_id)
     end
 end

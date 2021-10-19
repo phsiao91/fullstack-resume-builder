@@ -22,9 +22,11 @@ function NavBar({ user, setUser }) {
             <>
               <Link to="/bios">Bio</Link>
               <Link to="/introductions">Summary</Link>
+              <Link to="/workhistories">WorkHistory</Link>
               <Link to="/educations">Education</Link>
-              <Link to="/workhistories">Work History</Link>
-              <Link to="/skills">Languages</Link>
+              <Link to="/languages">Languages</Link>
+              <Link to="/socials">Social</Link>
+              <Link to="/hobbies">Hobbies</Link>
               <Link to="resumes">Resume</Link>
               <Link to="accounts">Account</Link>
               <Link to="/" onClick={handleLogoutClick}>Logout</Link>

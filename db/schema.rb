@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_14_181230) do
+ActiveRecord::Schema.define(version: 2021_10_15_193422) do
 
   create_table "bios", force: :cascade do |t|
     t.string "image"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2021_10_14_181230) do
     t.string "address"
     t.string "phone"
     t.string "email"
-    t.string "linkedin"
+    t.string "github"
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -36,12 +36,51 @@ ActiveRecord::Schema.define(version: 2021_10_14_181230) do
     t.index ["user_id"], name: "index_educations_on_user_id"
   end
 
+  create_table "hobbies", force: :cascade do |t|
+    t.string "description"
+    t.string "description1"
+    t.string "description2"
+    t.string "description3"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_hobbies_on_user_id"
+  end
+
   create_table "introductions", force: :cascade do |t|
     t.string "summary"
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_introductions_on_user_id"
+  end
+
+  create_table "languages", force: :cascade do |t|
+    t.string "expertise"
+    t.string "rating"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_languages_on_user_id"
+  end
+
+  create_table "socials", force: :cascade do |t|
+    t.string "facebook"
+    t.string "instagram"
+    t.string "twitter"
+    t.string "linkedin"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_socials_on_user_id"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string "details"
+    t.integer "work_history_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["work_history_id"], name: "index_tasks_on_work_history_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -64,6 +103,10 @@ ActiveRecord::Schema.define(version: 2021_10_14_181230) do
 
   add_foreign_key "bios", "users"
   add_foreign_key "educations", "users"
+  add_foreign_key "hobbies", "users"
   add_foreign_key "introductions", "users"
+  add_foreign_key "languages", "users"
+  add_foreign_key "socials", "users"
+  add_foreign_key "tasks", "work_histories"
   add_foreign_key "work_histories", "users"
 end

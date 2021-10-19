@@ -1,15 +1,15 @@
 import React, {useState, useEffect} from "react";
-import { Link } from "react-router-dom";
-// import { useHistory } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function Intro() {
 
-    // const history = useHistory()
+    const history = useHistory()
 
-    // const routeChange = () => {
-    //     let path = "/bios"
-    //     history.push(path)
-    // }
+    const routeChange = () => {
+        let path = "/workhistories"
+        history.push(path)
+    }
 
     const [summary, setSummary] = useState("")
     const [quote, setQuote] = useState([])
@@ -53,12 +53,6 @@ function Intro() {
 
     return(
         <div>
-            <div className="blockquote-wrapper">
-                <div className="blockquote">
-                    <p>{quote.text}</p>
-                    <p>{quote.author}</p>
-                </div>
-            </div>
             <form onSubmit={handleSubmit}>
                 <h1>Summary</h1>
                 
@@ -73,10 +67,16 @@ function Intro() {
                         <button type="submit">Save</button>
                         {/* </Link> */}
                         
-                    {/* <p className="route">
-                        <button className="router" onClick={routeChange} >Next Bio</button>
-                    </p> */}
+                        <p className="route">
+                        <button className="router" onClick={routeChange} >Next Work History</button>
+                        </p>
             </form>
+            <div className="blockquote-wrapper">
+                <div className="blockquote">
+                    <h2>{quote.text}</h2>
+                    <h4>{quote.author}</h4>
+                </div>
+            </div>
         </div>
     )
 }

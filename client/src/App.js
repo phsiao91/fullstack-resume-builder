@@ -6,12 +6,15 @@ import Login from "./Login";
 import NavBar from "./NavBar";
 import Home from "./Home";
 import Bio from "./Bio";
-import Skill from "./Skill";
+import Language from "./Language";
 import WorkHistory from "./WorkHistory";
 import Intro from "./Intro";
 import Education from "./Education";
 import Resume from "./Resume";
 import Account from './Account';
+import Social from './Social';
+import Hobby from './Hobby';
+import Dark from './Dark';
 
 
 function App() {
@@ -35,8 +38,11 @@ function App() {
         <main>
           {user? (
           <Switch>
-            <Route path="/skills">
-              <Skill/>
+            <Route path="/languages">
+              <Language/>
+            </Route>
+            <Route path="/socials">
+              <Social/>
             </Route>
             <Route path="/introductions">
               <Intro/>
@@ -49,6 +55,12 @@ function App() {
             </Route>
             <Route path="/bios">
               <Bio/>
+            </Route>
+            <Route path="/hobbies">
+              <Hobby/>
+            </Route>
+            <Route path="/dark">
+              <Dark/>
             </Route>
             <Route path="/workhistories">
               <WorkHistory/>

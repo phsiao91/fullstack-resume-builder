@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :hobbies
+  resources :socials
+  resources :tasks
+  resources :languages
   resources :educations
   resources :introductions
   resources :work_histories
@@ -22,11 +26,15 @@ Rails.application.routes.draw do
   get "/mywork", to: "work_histories#index"
   post "/tasks", to: "tasks#create"
   get "/mytask", to: "tasks#index"
-  post "/skills", to: "skills#create"
-  get "/myskill", to: "skills#show"
+  post "/languages", to: "languages#create"
+  get "/mylanguages", to: "languages#show"
   post "/introductions", to: "introductions#create"
   get "/myintro", to: "introductions#index"
   post "/educations", to: "educations#create"
   get "/myeducation", to: "educations#index"
+  post "/socials", to: "socials#create"
+  get "/mysocials", to: "socials#index"
+  post "hobbies", to: "hobbies#create"
+  get "/myhobbies", to: "hobbies#index"
 
 end

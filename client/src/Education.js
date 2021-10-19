@@ -1,16 +1,16 @@
 import React, {useState, useEffect} from "react";
 // import DatePicker from 'react-date-picker';
-// import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 
 function Education() {
 
-    // const history = useHistory()
+    const history = useHistory()
 
-    // const routeChange = () => {
-    //     let path = "/resumes"
-    //     history.push(path)
-    // }
+    const routeChange = () => {
+        let path = "/languages"
+        history.push(path)
+    }
 
     const [school, setSchool] = useState("")
     const [degree, setDegree] = useState("")
@@ -67,12 +67,7 @@ function Education() {
     return(
 
         <div>
-            <div className="blockquote-wrapper">
-                <div className="blockquote">
-                    <p>{quote.text}</p>
-                    <p>{quote.author}</p>
-                </div>
-            </div>
+            
             <form onSubmit={handleSubmit}>
                 <h1>Education</h1>
                     <label htmlFor="title">school</label>
@@ -101,10 +96,16 @@ function Education() {
                         value={end_date}
                         onChange={(e) => setEndDate(e.target.value)}/>
                     <button type="submit">Save</button>
-                    {/* <p className="route">
-                        <button className="router" onClick={routeChange} >Your resume is ready</button>
-                    </p>    */}
+                    <p className="route">
+                        <button className="router" onClick={routeChange} >Next Languages</button>
+                    </p>   
                 </form>
+                <div className="blockquote-wrapper">
+                <div className="blockquote">
+                    <h2>{quote.text}</h2>
+                    <h4>{quote.author}</h4>
+                </div>
+            </div>
         </div>
     )
 }
