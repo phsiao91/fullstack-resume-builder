@@ -1,5 +1,5 @@
 class BiosController < ApplicationController
-    before_action :confirm_authentication
+    # skip_before_action :confirm_authentication
     def index
         render json: Bio.all
     end

@@ -33,7 +33,7 @@ function Resume() {
     useEffect(getBio, [])
 
     const getWorkHistory = () => {
-        fetch("/mywork")
+        fetch("/allwork")
         .then(res => res.json())
         .then(fetchedWorkHistory => setWorkHistories(fetchedWorkHistory)
     )
@@ -49,7 +49,7 @@ function Resume() {
 
 
     const getEducation = () => {
-        fetch("/myeducation")
+        fetch("/alleducation")
         .then(res => res.json())
         .then(fetchedEducation => setEducations(fetchedEducation)
     )}
@@ -118,6 +118,44 @@ function Resume() {
                     return mappedSkills
         
     }
+
+    const mapWork = () => {
+        let mappedWork = workHistories.map(eachWork =>{
+            console.log(eachWork.tasks[0].details)
+            return (
+                    <div className="li_wrap">
+                        <div className="date">{eachWork.start_date} - {eachWork.end_date}</div>
+                        <div className="info_dark">
+                            <p className="info_title">{eachWork.title}</p>
+                            <p className="info_com">{eachWork.company}</p>
+                            <p className="info_cont">{eachWork.tasks[0].details}</p>
+                            <p className="info_cont">{eachWork.tasks[1].details}</p>
+                        </div>
+                    </div>
+            )
+        })
+        // console.log(mappedWork)
+        return mappedWork
+        
+    }
+
+    const mapEducations = () => {
+        let mappedEducations = educations.map(eachEducation =>{
+            // console.log(eachEducation)
+            return (
+                <div className="li_wrap">
+                <div className="date">{eachEducation.start_date} - {eachEducation.end_date}</div>
+                <div className="info_dark">
+                    <p className="info_title">{eachEducation.degree}</p>
+                    <p className="info_com">{eachEducation.school}</p>
+                </div>
+                </div>
+            )
+        })
+        // console.log(mappedEducations)
+        return mappedEducations
+        
+    }
     
 
 
@@ -157,7 +195,7 @@ function Resume() {
                             <li>
                                 <FontAwesomeIcon class="icon" icon={faGithub} />
                                     <div class="data">
-                                        <a className="semi_bold" href ={bios.github}>github</a>
+                                        <a className="semi_bold" href ={bios.github} target="_blank">github</a>
                                     </div>
                             </li>
                         </ul>
@@ -178,37 +216,25 @@ function Resume() {
                             <li>
                                 <FontAwesomeIcon className="icon" icon={faFacebookSquare} />
                                 <div class="data">
-                                    <p class="semi_bold">
-                                        Facebook
-                                    </p>
-                                    <p>ray@facebook</p>
+                                    <a className="semi_bold" href ={socials.facebook} target="_blank">facebook</a>
                                 </div>
                             </li>
                             <li>
                                 <FontAwesomeIcon className="icon" icon={faInstagramSquare} />
                                 <div class="data">
-                                    <p class="semi_bold">
-                                        Instagram
-                                    </p>
-                                    <p>ray@facebook</p>
+                                    <a className="semi_bold" href ={socials.instagram} target="_blank">instagram</a>
                                 </div>
                             </li>
                             <li>
                                 <FontAwesomeIcon className="icon" icon={faTwitterSquare} />
                                 <div class="data">
-                                    <p class="semi_bold">
-                                        Twitter
-                                    </p>
-                                    <p>ray@facebook</p>
+                                    <a className="semi_bold" href ={socials.twitter} target="_blank">twitter</a>
                                 </div>
                             </li>
                             <li>
                                 <FontAwesomeIcon className="icon" icon={faLinkedin} />
                                 <div class="data">
-                                    <p class="semi_bold">
-                                        Linkedin
-                                    </p>
-                                    <p>ray@facebook</p>
+                                    <a className="semi_bold" href ={socials.linkedin} target="_blank">linkedin</a>
                                 </div>
                             </li>
                         </ul>
@@ -216,34 +242,28 @@ function Resume() {
                 </div>
             </div>
                 <div class="resume_right">
-                    <div className="resume_item resume_about">
+                    {/* <div className="resume_item resume_about">
                         <div class="title">
                             <h2 class="bold">Professional Summary</h2>
                         </div>
                         <p>{summary.summary}</p>
-                    </div>
-                    <div className="resume_item resume_work">
+                    </div> */}
+                    {/* <div className="resume_item resume_work">
                         <div class="title">
                             <h2 class="bold">Work History</h2>
                         </div>
                         <ul>
-                            {/* <li> */}
                                 <div class="date">from: {workHistories.start_date} to: {workHistories.end_date}</div>
                                 <div class="info">
                                     <li>
                                         <h4 class="semi-bold">title</h4>
                                     </li>
-                                    {/* <ol> */}
                                         <p>{workHistories.title}</p>
-                                    {/* </ol> */}
                                     <li>
                                         <h4 class="semi-bold">company</h4>
                                     </li>
-                                    {/* <ol> */}
                                         <p>{workHistories.company}</p>
-                                    {/* </ol> */}
                                 </div>
-                            {/* </li> */}
                         </ul>
                     </div>
                     <div className="resume_item resume_task">
@@ -252,13 +272,11 @@ function Resume() {
                         </div>
                         <div>
                             <ul>
-                                {/* <ol> */}
                                     {mapTasks()}
-                                {/* </ol> */}
                             </ul>
                         </div>
-                    </div>
-                    <div className="resume_item resume_education">
+                    </div> */}
+                    {/* <div className="resume_item resume_education">
                         <div class="title">
                             <h2 class="bold">Education</h2>
                         </div>
@@ -275,7 +293,7 @@ function Resume() {
                                     <p>{educations.degree}</p>
                             </div>
                         </ul>
-                    </div>
+                    </div> */}
                     <div className="resume_item resume_hobby">
                         <div class="title">
                             <h2 class="bold">Hobby</h2>

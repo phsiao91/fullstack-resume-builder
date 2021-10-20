@@ -14,6 +14,7 @@ function Dark() {
     const [skills, setSkills] = useState([])
     const [educations, setEducations] = useState([])
     const [tasks, setTasks] = useState([])
+    const [tasks1, setTasks1] = useState([])
     const [socials, setSocials] = useState([])
     const [hobby, setHobbies] = useState([])
 
@@ -34,9 +35,10 @@ function Dark() {
     useEffect(getBio, [])
 
     const getWorkHistory = () => {
-        fetch("/mywork")
+        fetch("/allwork")
         .then(res => res.json())
-        .then(fetchedWorkHistory => setWorkHistories(fetchedWorkHistory)
+        .then(fetchedWorkHistory => {console.log(fetchedWorkHistory)
+            setWorkHistories(fetchedWorkHistory)}
     )
     }
     useEffect(getWorkHistory, [])
@@ -50,9 +52,10 @@ function Dark() {
 
 
     const getEducation = () => {
-        fetch("/myeducation")
+        fetch("/alleducation")
         .then(res => res.json())
-        .then(fetchedEducation => setEducations(fetchedEducation)
+        .then(fetchedEducation => {console.log(fetchedEducation)
+            setEducations(fetchedEducation)} 
     )}
     useEffect(getEducation, [])
 
@@ -61,11 +64,32 @@ function Dark() {
     const getTask = () => {
         fetch("/mytask")
         .then(res => res.json())
-        .then(fetchedTask => setTasks(fetchedTask)
+        .then(fetchedTask => {console.log(fetchedTask)
+            setTasks(fetchedTask)}
     )
 
     }
     useEffect(getTask, [])
+
+    const getFirstTask = () => {
+        fetch("/firsttask")
+        .then(res => res.json())
+        .then(fetchedTask => {console.log(fetchedTask)
+            setTasks1(fetchedTask)}
+    )
+
+    }
+    useEffect(getFirstTask, [])
+
+    const mapTasks1 = () => {
+        let mappedTasks1 = tasks1.map(eachTask =>{
+            // console.log(eachTask.details)
+            return (<p>{eachTask.details}</p>)
+        })
+        console.log(mappedTasks1)
+        return mappedTasks1
+        
+    }
 
     const getHobby = () => {
         fetch("/myhobbies")
@@ -102,6 +126,46 @@ function Dark() {
             
         }
 
+        const mapWork = () => {
+            let mappedWork = workHistories.map(eachWork =>{
+                console.log(eachWork.tasks[0].details)
+                return (
+                        <div className="li_wrap">
+                            <div className="date">{eachWork.start_date} - {eachWork.end_date}</div>
+                            <div className="info_dark">
+                                <p className="info_title">{eachWork.title}</p>
+                                <p className="info_com">{eachWork.company}</p>
+                                <p className="info_cont">{eachWork.tasks[0].details}</p>
+                                <p className="info_cont">{eachWork.tasks[1].details}</p>
+                            </div>
+                        </div>
+                )
+            })
+            // console.log(mappedWork)
+            return mappedWork
+            
+        }
+
+        const mapEducations = () => {
+            let mappedEducations = educations.map(eachEducation =>{
+                // console.log(eachEducation)
+                return (
+                    <div className="li_wrap">
+                    <div className="date">{eachEducation.start_date} - {eachEducation.end_date}</div>
+                    <div className="info_dark">
+                        <p className="info_title">{eachEducation.degree}</p>
+                        <p className="info_com">{eachEducation.school}</p>
+                    </div>
+                    </div>
+                )
+            })
+            // console.log(mappedEducations)
+            return mappedEducations
+            
+        }
+
+        // console.log(mapEducations)
+
 
         const mapSkills = () => {
             let mappedSkills = skills.map(eachSkill =>{
@@ -125,11 +189,6 @@ function Dark() {
                     return mappedSkills
         
     }
-
-    const facebook = () => {
-        return <a href={socials.facebook}/>
-    }
-    console.log(facebook)
     
 
     return (
@@ -174,7 +233,7 @@ function Dark() {
                                         <div className="icon">
                                             <FontAwesomeIcon icon={faGithub}/>
                                         </div>
-                                        <a className="text" href ={bios.github}>github</a>
+                                        <a className="text" href ={bios.github} target="_blank">github</a>
                                     </div>
                                 {/* </li> */}
                             </ul>
@@ -284,7 +343,8 @@ function Dark() {
                             </div>
                             <div className="exp_wrap">
                                 <ul>
-                                    <div className="li_wrap">
+                                    {mapWork()}
+                                    {/* <div className="li_wrap">
                                         <div className="date">{workHistories.start_date} - {workHistories.end_date}</div>
                                         <div className="info_dark">
                                             <p className="info_title">{workHistories.title}</p>
@@ -301,9 +361,9 @@ function Dark() {
                                         <div className="info_dark">
                                             <p className="info_title">{workHistories.title}</p>
                                             <p className="info_com">{workHistories.company}</p>
-                                            <p className="info_cont">{mapTasks()}</p>
+                                            <p className="info_cont">{mapTasks1()}</p>
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </ul>
                             </div>
                         </div>
@@ -313,24 +373,7 @@ function Dark() {
                             </div>
                             <div className="education_wrap">
                                 <ul>
-                                    <div className="li_wrap">
-                                        <div className="date">{educations.start_date} - {educations.end_date}</div>
-                                        <div className="info_dark">
-                                            <p className="info_title">{educations.degree}</p>
-                                            <p className="info_com">{educations.school}</p>
-                                        </div>
-                                    </div>
-                                </ul>
-                            </div>
-                            <div className="education_wrap">
-                                <ul>
-                                    <div className="li_wrap">
-                                        <div className="date">{educations.start_date} - {educations.end_date}</div>
-                                        <div className="info_dark">
-                                            <p className="info_title">{educations.degree}</p>
-                                            <p className="info_com">{educations.school}</p>
-                                        </div>
-                                    </div>
+                                    {mapEducations()}
                                 </ul>
                             </div>
                         </div>
@@ -346,15 +389,15 @@ function Dark() {
                                     </p>
                                     <p>
                                         <FontAwesomeIcon className="icon" icon={faInstagramSquare} />
-                                        <a className="text" href ={socials.instagram}>instagram</a>
+                                        <a className="text" href ={socials.instagram} target="_blank">instagram</a>
                                     </p>
                                     <p>
                                         <FontAwesomeIcon className="icon" icon={faTwitterSquare} />
-                                        <a className="text" href ={socials.twitter}>twitter</a>
+                                        <a className="text" href ={socials.twitter} target="_blank">twitter</a>
                                     </p>
                                     <p>
                                         <FontAwesomeIcon className="icon" icon={faLinkedin} />
-                                        <a className="text" href ={socials.linkedin}>linkedin</a>
+                                        <a className="text" href ={socials.linkedin} target="_blank">linkedin</a>
                                     </p>
                                 </ul>
                             </div>    

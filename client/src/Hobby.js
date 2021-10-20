@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from "react";
 import { useHistory } from "react-router-dom";
 // import { faFutbol } from '@fortawesome/free-solid-svg-icons'
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faMapSigns, faEnvelope, faMobileAlt, faFutbol, faGamepad, faMusic, faHiking, faGem } from '@fortawesome/free-solid-svg-icons'
+import { faGithub, faFacebookSquare, faInstagramSquare, faTwitterSquare, faLinkedin, faHtml5, faReact, faJsSquare } from '@fortawesome/free-brands-svg-icons'
 
 
 
@@ -12,6 +14,18 @@ function Hobby() {
     const [description2, setDescription2] = useState("")
     const [description3, setDescription3] = useState("")
     const [quote, setQuote] = useState([])
+
+    let icons = [faMapSigns, faEnvelope, faMobileAlt, faFutbol, faGamepad, faMusic, faHiking, faGem, faGithub, faFacebookSquare, faInstagramSquare, faTwitterSquare, faLinkedin, faHtml5, faReact, faJsSquare ]
+
+    const mapIcons = () => {
+        let mappedIcons = icons.map(eachIcon =>{
+            // console.log(eachTask.details)
+            return (<FontAwesomeIcon className="icon" icon={eachIcon} />)
+        })
+        // console.log(mappedTasks[0])
+        return mappedIcons
+        
+    }
 
 
     const history = useHistory()
@@ -24,7 +38,7 @@ function Hobby() {
     const getQuote = () => {
         fetch("https://type.fit/api/quotes")
         .then(res => res.json())
-        .then(fetchedQuote => {console.log(fetchedQuote)
+        .then(fetchedQuote => {
             let randomQuote = fetchedQuote[Math.floor(Math.random() * fetchedQuote.length)]
 
         setQuote(randomQuote)
@@ -57,14 +71,15 @@ function Hobby() {
                 })
     }
 
-    // const hobbyClick = (click) => {
-    //     <FontAwesomeIcon class="icon" icon={faFutbol}/>
-    //     console.log(click)
-    // }
+    const handleClick = (click) => {
+        // setDescription = click
+        console.log(click)
+    }
 
     return(
         <div className="hobby">
             <form onSubmit={handleSubmit}>
+                <div onClick={handleClick}>{mapIcons()}</div>
                 <h1>Hobbies</h1>
                     <label htmlFor="name"></label>
                     <input 

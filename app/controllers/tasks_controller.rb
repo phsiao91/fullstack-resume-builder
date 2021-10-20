@@ -13,6 +13,10 @@ class TasksController < ApplicationController
         render json: @current_user.work_histories.last.tasks, status: :ok
     end
 
+    def first
+        render json: @current_user.work_histories.first.tasks, status: :ok
+    end
+
 
     def destroy
         task = Task.find_by(id: params[:id])

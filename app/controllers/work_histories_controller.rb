@@ -1,5 +1,6 @@
 class WorkHistoriesController < ApplicationController
-    
+    # skip_before_action :confirm_authentication
+
     def create
         
         wh = @current_user.work_histories.create(wh_params)
@@ -20,6 +21,10 @@ class WorkHistoriesController < ApplicationController
         head :no_content
     end
     
+    def show
+        render json: @current_user.work_histories.all, status: :ok
+    end
+
     private
 
     def wh_params

@@ -13,6 +13,10 @@ class EducationsController < ApplicationController
         render json: @current_user.educations.last, status: :ok
     end
 
+    def show
+        render json: @current_user.educations.all, status: :ok
+    end
+    
     private
 
     def education_params
