@@ -123,7 +123,7 @@ function Resume() {
         let mappedWork = workHistories.map(eachWork =>{
             console.log(eachWork.tasks[0].details)
             return (
-                    <div className="li_wrap">
+                    <div className="li_wrap_light">
                         <div className="date">{eachWork.start_date} - {eachWork.end_date}</div>
                         <div className="info_dark">
                             <p className="info_title">{eachWork.title}</p>
@@ -143,7 +143,7 @@ function Resume() {
         let mappedEducations = educations.map(eachEducation =>{
             // console.log(eachEducation)
             return (
-                <div className="li_wrap">
+                <div className="li_wrap_light">
                 <div className="date">{eachEducation.start_date} - {eachEducation.end_date}</div>
                 <div className="info_dark">
                     <p className="info_title">{eachEducation.degree}</p>
@@ -162,7 +162,9 @@ function Resume() {
 
     return(
     <div>
-        <h1>Resume</h1>
+        <Link to="dark">
+            <button className="mode">Dark Mode</button>
+        </Link>
         <div className="resume">
             <div className="resume_left">
                 <div class="resume_profile">
@@ -241,7 +243,35 @@ function Resume() {
                     </div>
                 </div>
             </div>
-                <div class="resume_right">
+                <div class="resume_item resume_right">
+                    <div className="resume_item resume_about">
+                        <div class="title">
+                            <h2 class="bold">About me</h2>
+                        </div>
+                        <p>{summary.summary}</p>
+                    </div>
+                    <div className="resume_item right_inner">
+                        <div className="resume_item exp">
+                            <div className="title">
+                                <h2 className="bold">Experience</h2>
+                            </div>
+                            <div className="exp_wrap">
+                                <ul>
+                                    {mapWork()}
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="resume_item exp">
+                            <div className="title">
+                            <h2 className="bold">Education</h2>
+                            </div>
+                            <div className="education_wrap">
+                                <ul>
+                                    {mapEducations()}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                     {/* <div className="resume_item resume_about">
                         <div class="title">
                             <h2 class="bold">Professional Summary</h2>
@@ -315,9 +345,6 @@ function Resume() {
                     </div>
                 </div>
         </div>
-        <Link to="dark">
-            <button>Dark Mode</button>
-        </Link>
     </div>
     )
 }

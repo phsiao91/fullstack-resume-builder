@@ -193,6 +193,9 @@ function Dark() {
 
     return (
         <div className="wrapper">
+            <Link to="resumes">
+                <button className="mode_light">Light Mode</button>
+            </Link>
             <div className="resume_dark">
                 <div className="left">
                     <div className="img_holder">
@@ -344,26 +347,6 @@ function Dark() {
                             <div className="exp_wrap">
                                 <ul>
                                     {mapWork()}
-                                    {/* <div className="li_wrap">
-                                        <div className="date">{workHistories.start_date} - {workHistories.end_date}</div>
-                                        <div className="info_dark">
-                                            <p className="info_title">{workHistories.title}</p>
-                                            <p className="info_com">{workHistories.company}</p>
-                                            <p className="info_cont">{mapTasks()}</p>
-                                        </div>
-                                    </div>
-                                </ul>
-                            </div>
-                            <div className="exp_wrap">
-                                <ul>
-                                    <div className="li_wrap">
-                                        <div className="date">{workHistories.start_date} - {workHistories.end_date}</div>
-                                        <div className="info_dark">
-                                            <p className="info_title">{workHistories.title}</p>
-                                            <p className="info_com">{workHistories.company}</p>
-                                            <p className="info_cont">{mapTasks1()}</p>
-                                        </div>
-                                    </div> */}
                                 </ul>
                             </div>
                         </div>
@@ -405,9 +388,6 @@ function Dark() {
                     </div>
                 </div>
             </div>
-            <Link to="resumes">
-                <button>Light Mode</button>
-            </Link>
         </div>
     )
 }

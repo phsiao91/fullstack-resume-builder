@@ -41,6 +41,7 @@ function WorkHistory() {
             }).then(res => {
                 if (res.ok) {
                     return res.json()
+                    .then(setTitle(""), setCompany(""), setStartDate(""), setEndDate(""))
                     }else {
                     return res.json().then(errors => Promise.reject(errors))
                     }
@@ -61,6 +62,7 @@ function WorkHistory() {
         }).then(res => {
             if (res.ok) {
                 return res.json()
+                .then(setDetails(""))
                 }else {
                 return res.json().then(errors => Promise.reject(errors))
                 }

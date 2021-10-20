@@ -29,6 +29,7 @@ function Intro() {
             }).then(res => {
                 if (res.ok) {
                     return res.json()
+                    .then(setSummary(""))
                     }else {
                     return res.json().then(errors => Promise.reject(errors))
                     }

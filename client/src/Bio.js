@@ -46,6 +46,7 @@ function Bio() {
             }).then(res => {
                 if (res.ok) {
                     return res.json()
+                    .then(setName(""), setImage(""), setAddress(""), setPhone(""), setEmail("", setGithub("")))
                     }else {
                     return res.json().then(errors => Promise.reject(errors))
                     }

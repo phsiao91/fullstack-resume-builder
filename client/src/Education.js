@@ -42,6 +42,7 @@ function Education() {
             }).then(res => {
                 if (res.ok) {
                     return res.json()
+                    .then(setSchool(""), setDegree(""), setStartDate(""), setEndDate(""))
                     }else {
                     return res.json().then(errors => Promise.reject(errors))
                     }

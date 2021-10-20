@@ -30,6 +30,7 @@ function Language() {
             }).then(res => {
                 if (res.ok) {
                     return res.json()
+                    .then(setExpertise(""), setRating(""))
                     }else {
                     return res.json().then(errors => Promise.reject(errors))
                     }

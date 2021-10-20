@@ -41,7 +41,8 @@ console.log(quote)
               </div>
               </>)
     } else {
-      return <h1 className="prompt">Please Login or Sign Up</h1>;
+      return (
+      <h3 className="prompt">Please Login or Sign Up</h3>)
     }
   }
   

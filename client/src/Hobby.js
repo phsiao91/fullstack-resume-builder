@@ -65,6 +65,7 @@ function Hobby() {
             }).then(res => {
                 if (res.ok) {
                     return res.json()
+                    .then(setDescription(""), setDescription1(""), setDescription2(""), setDescription3(""))
                     }else {
                     return res.json().then(errors => Promise.reject(errors))
                     }

@@ -45,6 +45,7 @@ function Social() {
             }).then(res => {
                 if (res.ok) {
                     return res.json()
+                    .then(setFacebook(""), setInstagram(""), setTwitter(""), setLinkedin(""))
                     }else {
                     return res.json().then(errors => Promise.reject(errors))
                     }
