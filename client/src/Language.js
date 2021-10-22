@@ -5,8 +5,13 @@ function Language() {
 
     const history = useHistory()
 
-    const routeChange = () => {
+    let next = () => {
         let path = "/socials"
+        history.push(path)
+    }
+
+    let back = () => {
+        let path = "/educations"
         history.push(path)
     }
 
@@ -70,10 +75,13 @@ function Language() {
                         value={rating}
                         onChange={(e) => setRating(e.target.value)}/>
                     <button type="submit">Save</button>
-            <p className="route">
-                <button className="router" onClick={routeChange} >Next Socials</button>
-            </p>
             </form>
+            <div className="flow">
+                <div class="multi-button">
+                    <button onClick={back}>Back</button>
+                    <button onClick={next}>Next</button>
+                </div>
+            </div>
             <div className="blockquote-wrapper">
                 <div className="blockquote">
                     <h2>{quote.text}</h2>

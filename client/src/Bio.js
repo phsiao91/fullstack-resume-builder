@@ -11,8 +11,13 @@ function Bio() {
 
     let history = useHistory()
 
-    let routeChange = () => {
+    let next = () => {
         let path = "/introductions"
+        history.push(path)
+    }
+
+    let back = () => {
+        let path = "/"
         history.push(path)
     }
 
@@ -132,10 +137,13 @@ function Bio() {
                         value={github}
                         onChange={(e) => setGithub(e.target.value)}/>
                     <button type="submit" >Save</button>
-                <p className="route">
-                    <button className="router" onClick={routeChange} >Next Summary</button>
-                </p>
             </form>
+            <div className="flow">
+                <div class="multi-button">
+                    <button onClick={back}>Back</button>
+                    <button onClick={next}>Next</button>
+                </div>
+            </div>
             <div className="blockquote-wrapper">
                 <div className="blockquote">
                     <h2>{quote.text}</h2>

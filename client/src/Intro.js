@@ -6,8 +6,13 @@ function Intro() {
 
     const history = useHistory()
 
-    const routeChange = () => {
+    const next = () => {
         let path = "/workhistories"
+        history.push(path)
+    }
+
+    let back = () => {
+        let path = "/bios"
         history.push(path)
     }
 
@@ -57,21 +62,21 @@ function Intro() {
             <form onSubmit={handleSubmit}>
                 <h1>Summary</h1>
                 
-                    <label htmlFor="summary">Professional summary</label>
-                            <input
-                            className="summary"
-                            type="text"
-                            name="summary"
-                            value={summary}
-                            onChange={(e) => setSummary(e.target.value)}/>
-                        {/* <Link to="/workhistories"> */}
-                        <button type="submit">Save</button>
-                        {/* </Link> */}
-                        
-                        <p className="route">
-                        <button className="router" onClick={routeChange} >Next Work History</button>
-                        </p>
+                <label htmlFor="summary">Professional summary</label>
+                    <input
+                        className="summary"
+                        type="text"
+                        name="summary"
+                        value={summary}
+                        onChange={(e) => setSummary(e.target.value)}/>
+                <button type="submit">Save</button>
             </form>
+            <div className="flow">
+                <div class="multi-button">
+                    <button onClick={back}>Back</button>
+                    <button onClick={next}>Next</button>
+                </div>
+            </div>
             <div className="blockquote-wrapper">
                 <div className="blockquote">
                     <h2>{quote.text}</h2>

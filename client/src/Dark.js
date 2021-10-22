@@ -382,10 +382,8 @@ function Dark() {
                             <div className= "li_wrap">
                                 <ul>
                                     <p>
-                                        {/* <Link to={socials.facebook}> */}
                                         <FontAwesomeIcon className="icon" icon={faFacebookSquare} />
                                         <a className="text" href ={socials.facebook} target="_blank">facebook</a>
-                                        {/* </Link> */}
                                     </p>
                                     <p>
                                         <FontAwesomeIcon className="icon" icon={faInstagramSquare} />

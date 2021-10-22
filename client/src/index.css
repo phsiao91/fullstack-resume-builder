@@ -144,7 +144,7 @@ header button {
 
 /* Navbar container */
 .navbar {
-  overflow: hidden;
+  overflow: auto;
   background-color: #333;
   font-family: Arial;
 }
@@ -155,8 +155,9 @@ header button {
   font-size: 16px;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 14px 30px;
   text-decoration: none;
+  margin-right: 675px;
 }
 
 /* The dropdown container */
@@ -173,14 +174,15 @@ header button {
   color: white;
   padding: 14px 16px;
   background-color: inherit;
-  font-family: inherit; /* Important for vertical align on mobile phones */
-  margin: 0; /* Important for vertical align on mobile phones */
+  font-family: inherit;
+  /* margin-left: 700px; */
 }
 
 /* Add a red background color to navbar links on hover */
 .navbar a:hover,
 .dropdown:hover .dropbtn {
-  background-color: red;
+  color: #52acff;
+  background-color: lightgrey;
 }
 
 /* Dropdown content (hidden by default) */
@@ -188,9 +190,10 @@ header button {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 160px;
+  max-width: 120px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  /* margin-left: 700px; */
 }
 
 /* Links inside the dropdown */
@@ -205,7 +208,7 @@ header button {
 
 /* Add a grey background color to dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: #ddd;
+  /* background-color: #ddd; */
 }
 
 /* Show the dropdown menu on hover */
@@ -831,10 +834,6 @@ form button[type="submit"] {
   /* justify-content: center; */
 }
 
-/* .right_inner .social .li_wrap ul p .icon {
-  font-size: 30px;
-} */
-
 .right_inner .social .li_wrap ul p .icon {
   position: absolute;
   top: 50%;
@@ -1016,4 +1015,40 @@ form button[type="submit"] {
 .task_form {
   /* margin-left: 65px; */
   margin-top: 20px;
+}
+
+.multi-button {
+  filter: drop-shadow(3px 10px 15px rgba(0, 0, 0, 0.45));
+}
+.multi-button button {
+  height: 50px;
+  width: 150px;
+  background: linear-gradient(to bottom, #bada55, #52acff);
+  font-weight: bold;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  margin: -5px;
+  padding: 0;
+  stroke: black;
+  outline: none;
+}
+.multi-button :nth-child(1) {
+  border-radius: 20px 0 0 20px;
+}
+.multi-button :nth-child(2) {
+  border-radius: 0 20px 20px 0;
+}
+button:hover {
+  cursor: pointer;
+  filter: drop-shadow(3px 5px 5px rgba(0, 0, 0, 0.45));
+}
+button:active {
+  filter: none;
+  transform: scale(0.95);
+}
+
+.flow {
+  padding-top: 50px;
+  margin-left: 300px;
 }

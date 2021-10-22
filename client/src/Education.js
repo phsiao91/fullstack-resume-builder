@@ -7,8 +7,13 @@ function Education() {
 
     const history = useHistory()
 
-    const routeChange = () => {
+    let next = () => {
         let path = "/languages"
+        history.push(path)
+    }
+
+    let back = () => {
+        let path = "/workhistories"
         history.push(path)
     }
 
@@ -96,11 +101,14 @@ function Education() {
                         name="endDate"
                         value={end_date}
                         onChange={(e) => setEndDate(e.target.value)}/>
-                    <button type="submit">Save</button>
-                    <p className="route">
-                        <button className="router" onClick={routeChange} >Next Languages</button>
-                    </p>   
+                    <button type="submit">Save</button> 
                 </form>
+                <div className="flow">
+                    <div class="multi-button">
+                        <button onClick={back}>Back</button>
+                        <button onClick={next}>Next</button>
+                    </div>
+                </div>
                 <div className="blockquote-wrapper">
                 <div className="blockquote">
                     <h2>{quote.text}</h2>

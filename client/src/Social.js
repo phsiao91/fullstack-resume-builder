@@ -11,8 +11,13 @@ function Social() {
 
     const history = useHistory()
 
-    const routeChange = () => {
-        let path = "/resumes"
+    let next = () => {
+        let path = "/hobbies"
+        history.push(path)
+    }
+
+    let back = () => {
+        let path = "/languages"
         history.push(path)
     }
 
@@ -83,10 +88,13 @@ function Social() {
                         value={linkedin}
                         onChange={(e) => setLinkedin(e.target.value)}/>
                     <button type="submit">Save</button>
-            <p className="route">
-                <button className="router" onClick={routeChange} >Your Resume is ready!!</button>
-            </p>
             </form>
+            <div className="flow">
+                <div class="multi-button">
+                    <button onClick={back}>Back</button>
+                    <button onClick={next}>Next</button>
+                </div>
+            </div>
             <div className="blockquote-wrapper">
                 <div className="blockquote">
                     <h2>{quote.text}</h2>

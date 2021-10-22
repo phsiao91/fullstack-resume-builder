@@ -57,7 +57,12 @@ function Hobby() {
 
     const history = useHistory()
 
-    const routeChange = () => {
+    let next = () => {
+        let path = "/resumes"
+        history.push(path)
+    }
+
+    let back = () => {
         let path = "/socials"
         history.push(path)
     }
@@ -132,11 +137,13 @@ function Hobby() {
                         name="description3"
                         value={description3}
                         onChange={(e) => setDescription3(e.target.value)}/>
-                    <button type="submit">Save</button>*/}
-            <p className="route">
-                <button className="router" onClick={routeChange} >Next Socials</button>
-            </p> 
-            {/* </form> */}
+                    <button type="submit">Save</button>*/} 
+            <div className="flow">
+                <div class="multi-button">
+                    <button onClick={back}>Back</button>
+                    <button onClick={next}>Next</button>
+                </div>
+            </div>
             <div className="blockquote-wrapper">
                 <div className="blockquote">
                     <h2>{quote.text}</h2>

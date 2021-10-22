@@ -16,13 +16,14 @@ function NavBar({ user, setUser }) {
 
 
   return (
+  <div>
     <header>
       <div className="navbar">
         <Link to="/">Home</Link>
   
         <div>
             <div className="dropdown">
-              <button class="dropbtn">Menu
+              <button class="dropbtn">Edit Profile
                 <FontAwesomeIcon icon={faCaretDown}/>
               </button>
               <div className="dropdown-content">
@@ -42,6 +43,14 @@ function NavBar({ user, setUser }) {
       </div>
       
     </header>
+      {/* <div className="footer">
+        <footer>
+          <Link to="/" onClick={handleLogoutClick}>
+            <button>Logout</button>
+          </Link>
+        </footer>
+      </div> */}
+  </div>
   );
 }
 
