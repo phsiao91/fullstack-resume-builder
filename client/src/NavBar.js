@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { faCaretDown} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 function NavBar({ user, setUser }) {
   function handleLogoutClick() {
@@ -14,29 +17,28 @@ function NavBar({ user, setUser }) {
 
   return (
     <header>
-      <div>
+      <div className="navbar">
         <Link to="/">Home</Link>
-      </div>
-      <div>
-          {user? (
-            <>
-              <Link to="/bios">Bio</Link>
-              <Link to="/introductions">Summary</Link>
-              <Link to="/workhistories">WorkHistory</Link>
-              <Link to="/educations">Education</Link>
-              <Link to="/languages">Languages</Link>
-              <Link to="/socials">Social</Link>
-              <Link to="/hobbies">Hobbies</Link>
-              <Link to="resumes">Resume</Link>
-              <Link to="accounts">Account</Link>
-              <Link to="/" onClick={handleLogoutClick}>Logout</Link>
-            </>
-          ) : (
-            <>
-              <Link to="/login">Login</Link>
-              <Link to="/signup">Signup</Link>
-            </>
-          )}
+  
+        <div>
+            <div className="dropdown">
+              <button class="dropbtn">Menu
+                <FontAwesomeIcon icon={faCaretDown}/>
+              </button>
+              <div className="dropdown-content">
+                <Link to="/bios">Bio</Link>
+                <Link to="/introductions">Summary</Link>
+                <Link to="/workhistories">WorkHistory</Link>
+                <Link to="/educations">Education</Link>
+                <Link to="/languages">Languages</Link>
+                <Link to="/socials">Social</Link>
+                <Link to="/hobbies">Hobbies</Link>
+                <Link to="resumes">Resume</Link>
+                <Link to="accounts">Account</Link>
+                <Link to="/" onClick={handleLogoutClick}>Logout</Link>
+              </div>
+            </div>
+            </div>
       </div>
       
     </header>

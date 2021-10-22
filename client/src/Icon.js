@@ -1,25 +1,57 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 // import { useHistory } from "react-router-dom";
-import { faFutbol } from '@fortawesome/free-solid-svg-icons'
+// import { faFutbol } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Hobby from "./Hobby";
+// import Hobby from "./Hobby";
 
 
-function Icon () {
+function Icon ({ iconToRender }) {
+    console.log(iconToRender.textIcon)
+
+    const [description, setDescription] = useState("")
 
 
-    const hobbyClick = (click) => {
-        <FontAwesomeIcon class="icon" icon={faFutbol}/>
-        console.log(click)
+    const hobbyClick = (sythEvent) => {
+        // <FontAwesomeIcon class="icon" icon={faFutbol}/>
+        console.log(sythEvent)
+
+        // console.log(iconToRender.iconName)
+        sythEvent.preventDefault()
+        // console.log(e.target.value)
+            fetch("/hobbies", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                credentials: "include",
+                body: JSON.stringify({
+                     description: iconToRender.textIcon }
+                    
+                ),
+            }).then(res => {
+                if (res.ok) {
+                    return res.json()
+                    .then(setDescription(""))
+                    }else {
+                    return res.json().then(errors => Promise.reject(errors))
+                    }
+                })
+
     }
 
 
     return(
-        <div>
-            <Hobby renderHobby={hobbyClick}/>
+        <div onClick={hobbyClick}>
+            {/* <h2>{iconToRender.iconName}</h2> */}
+            <FontAwesomeIcon className="icon" icon={iconToRender.realIcon}/>
+            {/* <FontAwesomeIcon className="icon" icon={iconNew.realIcon}/> */}
+
+            {/* <Hobby renderHobby={hobbyClick}/> */}
         </div>
     )
 }
 
 
 export default Icon
+
+

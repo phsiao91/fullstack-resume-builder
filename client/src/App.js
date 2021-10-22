@@ -15,6 +15,7 @@ import Account from './Account';
 import Social from './Social';
 import Hobby from './Hobby';
 import Dark from './Dark';
+import IconNew from './IconNew';
 
 
 function App() {

@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faMapMarkerAlt, faEnvelope, faPhoneSquare, faFutbol, faGamepad, faMusic, faHiking } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faFacebookSquare, faInstagramSquare, faTwitterSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { Link } from "react-router-dom";
+import IconNew from "./IconNew";
+
 
 function Resume() {
 
@@ -73,6 +75,24 @@ function Resume() {
     }
     useEffect(getHobby, [])
 
+    const mapHobbies = () => {
+        let mappedIcons = hobby.map(eachIcon =>{ 
+            
+            console.log(eachIcon)
+            // let hob = eachIcon.description.charAt(0).toUpperCase() + eachIcon.description.slice(1)
+            // console.log(hob)
+            // return (<Icon iconToRender={eachIcon} />)
+            return (
+                    <p>
+                        <IconNew className="icon" iconToProcess={eachIcon}/>
+                    </p>
+            )           
+        })
+        // console.log(mappedTasks[0])
+        return mappedIcons
+        
+    }
+
     const getSocial = () => {
         fetch("/mysocials")
         .then(res => res.json())
@@ -91,9 +111,9 @@ function Resume() {
     // }
 
         const mapTasks = () => {
-            let mappedTasks = tasks.map(eachTask =>{
+            let mappedTasks = workHistories.tasks.details.map(eachTask =>{
                 // console.log(eachTask.details)
-                return (<li>{eachTask.details}</li>)
+                return (eachTask)
             })
             // console.log(mappedTasks[0])
             return mappedTasks
@@ -121,15 +141,22 @@ function Resume() {
 
     const mapWork = () => {
         let mappedWork = workHistories.map(eachWork =>{
-            console.log(eachWork.tasks[0].details)
+            console.log(eachWork)
             return (
                     <div className="li_wrap_light">
                         <div className="date">{eachWork.start_date} - {eachWork.end_date}</div>
                         <div className="info_dark">
                             <p className="info_title">{eachWork.title}</p>
                             <p className="info_com">{eachWork.company}</p>
-                            <p className="info_cont">{eachWork.tasks[0].details}</p>
-                            <p className="info_cont">{eachWork.tasks[1].details}</p>
+                            {
+                                eachWork.tasks.map(eachTask => {
+                                    return(
+                                        <p className="info_cont">{eachTask.details}</p>
+                                    )
+                                }) 
+                            }
+                            {/* <p className="info_cont">{eachWork.tasks[0].details}</p>
+                            <p className="info_cont">{eachWork.tasks[1].details}</p> */}
                         </div>
                     </div>
             )
@@ -329,7 +356,8 @@ function Resume() {
                             <h2 class="bold">Hobby</h2>
                         </div>
                         <ul>
-                            <p>
+                            {mapHobbies()}
+                            {/* <p>
                                 <FontAwesomeIcon className="icon" icon={faFutbol} />
                             </p>
                             <p>
@@ -340,7 +368,7 @@ function Resume() {
                             </p>
                             <p>
                                 <FontAwesomeIcon className="icon" icon={faHiking} />
-                            </p>
+                            </p> */}
                         </ul>
                     </div>
                 </div>

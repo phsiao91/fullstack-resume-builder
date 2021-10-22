@@ -10,12 +10,12 @@ class HobbiesController < ApplicationController
     end
 
     def index
-        render json: @current_user.hobbies.last, status: :ok
+        render json: @current_user.hobbies.all, status: :ok
     end
 
     private
 
     def hobby_params
-        params.permit(:description, :description1, :description2, :description3, :user_id)
+        params.permit(:description, :user_id)
     end
 end

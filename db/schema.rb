@@ -38,9 +38,6 @@ ActiveRecord::Schema.define(version: 2021_10_15_193422) do
 
   create_table "hobbies", force: :cascade do |t|
     t.string "description"
-    t.string "description1"
-    t.string "description2"
-    t.string "description3"
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

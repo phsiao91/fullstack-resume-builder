@@ -83,8 +83,8 @@ function WorkHistory() {
 
 
     return(
-        <div>
-            
+    <div>
+        <div className="wh-form" >
             <form onSubmit={handleSubmit}>
                 <h1>Work History</h1>
                     <label htmlFor="title">title</label>
@@ -114,7 +114,8 @@ function WorkHistory() {
                         onChange={(e) => setEndDate(e.target.value)}/>
                     <button type="submit">Save</button>
             </form>
-            <div>
+        </div>
+            <div className="task_form" >
                 <form onSubmit= {taskSubmit}>
                     <label>tasks</label>
                         <input 
@@ -133,8 +134,8 @@ function WorkHistory() {
                     <h2>{quote.text}</h2>
                     <h4>{quote.author}</h4>
                 </div>
-            </div>
         </div>
+    </div>
     )
 }
 

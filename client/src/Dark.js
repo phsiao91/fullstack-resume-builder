@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faMapSigns, faEnvelope, faMobileAlt, faFutbol, faGamepad, faMusic, faHiking, faGem } from '@fortawesome/free-solid-svg-icons'
-import { faGithub, faFacebookSquare, faInstagramSquare, faTwitterSquare, faLinkedin, faHtml5, faReact, faJsSquare } from '@fortawesome/free-brands-svg-icons'
+import {faMapSigns, faEnvelope, faMobileAlt, faFutbol, faGamepad, faMusic, faHiking, faGem, faBiking, faPlane, faBook, faDumbbell, faRunning, faSwimmer,faSnowboarding, faRibbon, faCamera, faChess, faPalette } from '@fortawesome/free-solid-svg-icons'
+import { faGithub, faFacebookSquare, faInstagramSquare, faTwitterSquare, faLinkedin, faHtml5, faReact, faJsSquare, faXbox } from '@fortawesome/free-brands-svg-icons'
+import IconNew from "./IconNew";
 
 
 function Dark() {
@@ -14,7 +15,6 @@ function Dark() {
     const [skills, setSkills] = useState([])
     const [educations, setEducations] = useState([])
     const [tasks, setTasks] = useState([])
-    const [tasks1, setTasks1] = useState([])
     const [socials, setSocials] = useState([])
     const [hobby, setHobbies] = useState([])
 
@@ -37,8 +37,7 @@ function Dark() {
     const getWorkHistory = () => {
         fetch("/allwork")
         .then(res => res.json())
-        .then(fetchedWorkHistory => {console.log(fetchedWorkHistory)
-            setWorkHistories(fetchedWorkHistory)}
+        .then(fetchedWorkHistory => setWorkHistories(fetchedWorkHistory)
     )
     }
     useEffect(getWorkHistory, [])
@@ -54,8 +53,8 @@ function Dark() {
     const getEducation = () => {
         fetch("/alleducation")
         .then(res => res.json())
-        .then(fetchedEducation => {console.log(fetchedEducation)
-            setEducations(fetchedEducation)} 
+        .then(fetchedEducation =>
+            setEducations(fetchedEducation)
     )}
     useEffect(getEducation, [])
 
@@ -64,40 +63,57 @@ function Dark() {
     const getTask = () => {
         fetch("/mytask")
         .then(res => res.json())
-        .then(fetchedTask => {console.log(fetchedTask)
+        .then(fetchedTask => {
+            // console.log(fetchedTask)
             setTasks(fetchedTask)}
     )
 
     }
     useEffect(getTask, [])
 
-    const getFirstTask = () => {
-        fetch("/firsttask")
-        .then(res => res.json())
-        .then(fetchedTask => {console.log(fetchedTask)
-            setTasks1(fetchedTask)}
-    )
+    // const getFirstTask = () => {
+    //     fetch("/firsttask")
+    //     .then(res => res.json())
+    //     .then(fetchedTask => {console.log(fetchedTask)
+    //         setTasks1(fetchedTask)}
+    // )
 
-    }
-    useEffect(getFirstTask, [])
+    // }
+    // useEffect(getFirstTask, [])
 
-    const mapTasks1 = () => {
-        let mappedTasks1 = tasks1.map(eachTask =>{
-            // console.log(eachTask.details)
-            return (<p>{eachTask.details}</p>)
-        })
-        console.log(mappedTasks1)
-        return mappedTasks1
-        
-    }
 
     const getHobby = () => {
         fetch("/myhobbies")
         .then(res => res.json())
-        .then(fetchedHobby => setHobbies(fetchedHobby)
+        .then(fetchedHobby => {console.log(fetchedHobby)
+            setHobbies(fetchedHobby)}
     )
     }
     useEffect(getHobby, [])
+
+    const mapHobbies = () => {
+        let mappedIcons = hobby.map(eachIcon =>{ 
+            
+            console.log(eachIcon)
+            // let hob = eachIcon.description.charAt(0).toUpperCase() + eachIcon.description.slice(1)
+            // console.log(hob)
+            // return (<Icon iconToRender={eachIcon} />)
+            return (
+                // <div className="li_wrap">
+                //     <div className="icon">
+                        <div>
+                        <IconNew iconToProcess={eachIcon}/>
+                        </div>
+                //     </div>
+            )
+        })
+        // console.log(mappedTasks[0])
+        return mappedIcons
+        
+    }
+
+    console.log(mapHobbies())
+
 
     const getSocial = () => {
         fetch("/mysocials")
@@ -116,27 +132,34 @@ function Dark() {
     //     }
     // }
 
-        const mapTasks = () => {
-            let mappedTasks = tasks.map(eachTask =>{
-                // console.log(eachTask.details)
-                return (<p>{eachTask.details}</p>)
-            })
-            // console.log(mappedTasks)
-            return mappedTasks
+        // const mapTasks = () => {
+        //     let mappedTasks = tasks.map(eachTask =>{
+        //         // console.log(eachTask.details)
+        //         return (<p>{eachTask.details}</p>)
+        //     })
+        //     // console.log(mappedTasks)
+        //     return mappedTasks
             
-        }
+        // }
 
         const mapWork = () => {
             let mappedWork = workHistories.map(eachWork =>{
-                console.log(eachWork.tasks[0].details)
+                // console.log(eachWork)
                 return (
                         <div className="li_wrap">
                             <div className="date">{eachWork.start_date} - {eachWork.end_date}</div>
                             <div className="info_dark">
                                 <p className="info_title">{eachWork.title}</p>
                                 <p className="info_com">{eachWork.company}</p>
-                                <p className="info_cont">{eachWork.tasks[0].details}</p>
-                                <p className="info_cont">{eachWork.tasks[1].details}</p>
+                                {
+                                    eachWork.tasks.map(eachTask => {
+                                        return(
+                                            <p className="info_cont">{eachTask.details}</p>
+                                        )
+                                    }) 
+                                }
+                                {/* <p className="info_cont">{eachWork.tasks[0].details}</p>
+                                <p className="info_cont">{eachWork.tasks[1].details}</p> */}
                             </div>
                         </div>
                 )
@@ -145,6 +168,7 @@ function Dark() {
             return mappedWork
             
         }
+    
 
         const mapEducations = () => {
             let mappedEducations = educations.map(eachEducation =>{
@@ -261,7 +285,7 @@ function Dark() {
                                         <div className="icon">
                                             <FontAwesomeIcon icon={faReact}/>
                                         </div>
-                                        <div className="text">React.js</div>
+                                        <div className="text">React</div>
                                     </div>
                                 {/* </li> */}
                                 {/* <li> */}
@@ -289,38 +313,31 @@ function Dark() {
                         </div>
                         <div className="hobbies_dark">
                             <ul>
-                                {/* <li> */}
-                                    <div className="li_wrap">
-                                        <div className="icon">
-                                            <FontAwesomeIcon icon={faFutbol}/>
-                                        </div>
-                                        <div className="text">soccer</div>
+                                {mapHobbies()}
+                                {/* <div className="li_wrap">
+                                    <div className="icon">
+                                        <FontAwesomeIcon icon={faFutbol}/>
                                     </div>
-                                {/* </li> */}
-                                {/* <li> */}
-                                    <div className="li_wrap">
-                                        <div className="icon">
-                                            <FontAwesomeIcon icon={faGamepad}/>
-                                        </div>
-                                        <div className="text">gaming</div>
+                                    <div className="text">soccer</div>
+                                </div>
+                                <div className="li_wrap">
+                                    <div className="icon">
+                                        <FontAwesomeIcon icon={faGamepad}/>
                                     </div>
-                                {/* </li> */}
-                                {/* <li> */}
-                                    <div className="li_wrap">
-                                        <div className="icon">
-                                            <FontAwesomeIcon icon={faMusic}/>
-                                        </div>
-                                        <div className="text">music</div>
+                                    <div className="text">gaming</div>
+                                </div>
+                                <div className="li_wrap">
+                                    <div className="icon">
+                                        <FontAwesomeIcon icon={faMusic}/>
                                     </div>
-                                {/* </li> */}
-                                {/* <li> */}
-                                    <div className="li_wrap">
-                                        <div className="icon">
-                                            <FontAwesomeIcon icon={faHiking}/>
-                                        </div>
-                                        <div className="text">hiking</div>
+                                    <div className="text">music</div>
+                                </div>
+                                <div className="li_wrap">
+                                    <div className="icon">
+                                        <FontAwesomeIcon icon={faHiking}/>
                                     </div>
-                                {/* </li> */}
+                                    <div className="text">hiking</div>
+                                </div> */}
                             </ul>
                         </div>
                     </div>

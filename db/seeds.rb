@@ -32,7 +32,7 @@ t1 = Task.create(details: "Got lit!!!!!", work_history_id: w1.id)
 
 e1 = Education.create(school: "Flatiron", degree: "Software Engineering", start_date: Date.new(2019,06,21), end_date: Date.new(2020,05,05), user_id: u1.id ) 
 
-h1 = Hobby.create(description: "Football", description1: "Gaming", description2: "Music", description3: "Hiking", user_id: u1.id )
+h1 = Hobby.create(description: "Football", user_id: u1.id )
 
 i1 = Introduction.create(summary: "Dynamic software engineer", user_id: u1.id)
 

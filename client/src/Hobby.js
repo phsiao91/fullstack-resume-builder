@@ -1,31 +1,58 @@
 import React, {useState, useEffect} from "react";
 import { useHistory } from "react-router-dom";
 // import { faFutbol } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faMapSigns, faEnvelope, faMobileAlt, faFutbol, faGamepad, faMusic, faHiking, faGem } from '@fortawesome/free-solid-svg-icons'
-import { faGithub, faFacebookSquare, faInstagramSquare, faTwitterSquare, faLinkedin, faHtml5, faReact, faJsSquare } from '@fortawesome/free-brands-svg-icons'
-
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faBiking, faPlane, faBook, faFutbol, faGamepad, faMusic, faHiking, faDumbbell, faRunning, faSwimmer, faSnowboarding, faRibbon, faCamera, faPalette, faChess } from '@fortawesome/free-solid-svg-icons'
+// import { faXbox, faFacebookSquare, faInstagramSquare, faTwitterSquare, faLinkedin, faHtml5, faReact, faJsSquare } from '@fortawesome/free-brands-svg-icons'
+import Icon from "./Icon";
+import { faXbox } from "@fortawesome/free-brands-svg-icons";
+// import { Link } from "react-router-dom";
 
 
 function Hobby() {
 
-    const [description, setDescription] = useState("")
-    const [description1, setDescription1] = useState("")
-    const [description2, setDescription2] = useState("")
-    const [description3, setDescription3] = useState("")
     const [quote, setQuote] = useState([])
 
-    let icons = [faMapSigns, faEnvelope, faMobileAlt, faFutbol, faGamepad, faMusic, faHiking, faGem, faGithub, faFacebookSquare, faInstagramSquare, faTwitterSquare, faLinkedin, faHtml5, faReact, faJsSquare ]
+    const newIcon = [
+        {realIcon: faFutbol, textIcon: "faFutbol" },
+        {realIcon: faHiking, textIcon: "faHiking" },
+        {realIcon: faGamepad, textIcon: "faGamepad" },
+        {realIcon: faMusic, textIcon: "faMusic" },
+        {realIcon: faBiking, textIcon: "faBiking" },
+        {realIcon: faPlane, textIcon: "faPlane" },
+        {realIcon: faBook, textIcon: "faBook" },
+        {realIcon: faDumbbell, textIcon: "faDumbbell" },
+        {realIcon: faRunning, textIcon: "faRunning" },
+        {realIcon: faSwimmer, textIcon: "faSwimmer" },
+        {realIcon: faSnowboarding, textIcon: "faSnowboarding" },
+        {realIcon: faRibbon, textIcon: "faRibbon" },
+        {realIcon: faCamera, textIcon: "faCamera" },
+        {realIcon: faChess, textIcon: "faChess" },
+        {realIcon: faPalette, textIcon: "faPalette" },
+        {realIcon: faXbox, textIcon: "faXbox" },
+
+    ]
 
     const mapIcons = () => {
-        let mappedIcons = icons.map(eachIcon =>{
+        let mappedIcons = newIcon.map(eachIcon =>{ 
             // console.log(eachTask.details)
-            return (<FontAwesomeIcon className="icon" icon={eachIcon} />)
+            return (
+                    <div className="hobby_dark">
+                        <ul>
+                            <div className="li_wrap">
+                                <div className="icon">
+                                    <Icon iconToRender={eachIcon} />
+                                </div>
+                            </div>
+                        </ul>
+                    </div>)
+            // return (<FontAwesomeIcon className="icon" icon={eachIcon} />)
         })
         // console.log(mappedTasks[0])
         return mappedIcons
         
     }
+
 
 
     const history = useHistory()
@@ -47,41 +74,42 @@ function Hobby() {
     }
     useEffect(getQuote, [])
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        console.log(e.target.value)
-            fetch("/hobbies", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                credentials: "include",
-                body: JSON.stringify({
-                    description,
-                    description1,
-                    description2,
-                    description3
-                }),
-            }).then(res => {
-                if (res.ok) {
-                    return res.json()
-                    .then(setDescription(""), setDescription1(""), setDescription2(""), setDescription3(""))
-                    }else {
-                    return res.json().then(errors => Promise.reject(errors))
-                    }
-                })
-    }
+    // const handleSubmit = (e) => {
+    //     e.preventDefault()
+    //     console.log(e.target.value)
+    //         fetch("/hobbies", {
+    //             method: "POST",
+    //             headers: {
+    //                 "Content-Type": "application/json",
+    //             },
+    //             credentials: "include",
+    //             body: JSON.stringify({
+    //                  description: iconToRender.iconName }
+                    
+    //             ),
+    //         }).then(res => {
+    //             if (res.ok) {
+    //                 return res.json()
+    //                 .then(setDescription(""), setDescription1(""), setDescription2(""), setDescription3(""))
+    //                 }else {
+    //                 return res.json().then(errors => Promise.reject(errors))
+    //                 }
+    //             })
+    // }
 
-    const handleClick = (click) => {
-        // setDescription = click
-        console.log(click)
-    }
+    // const handleClick = (synthEvent) => {
+    //     // setDescription = click
+    //     console.log(synthEvent.target)
+    // }
 
     return(
         <div className="hobby">
-            <form onSubmit={handleSubmit}>
-                <div onClick={handleClick}>{mapIcons()}</div>
-                <h1>Hobbies</h1>
+            <h1>Hobbies</h1>
+            {/* <form > */}
+                {/* <div onClick={handleClick}> */}
+                    {mapIcons()}
+                    {/* </div> */}
+                {/* <h1>Hobbies</h1>
                     <label htmlFor="name"></label>
                     <input 
                         type="text"
@@ -104,11 +132,11 @@ function Hobby() {
                         name="description3"
                         value={description3}
                         onChange={(e) => setDescription3(e.target.value)}/>
-                    <button type="submit">Save</button>
+                    <button type="submit">Save</button>*/}
             <p className="route">
                 <button className="router" onClick={routeChange} >Next Socials</button>
-            </p>
-            </form>
+            </p> 
+            {/* </form> */}
             <div className="blockquote-wrapper">
                 <div className="blockquote">
                     <h2>{quote.text}</h2>

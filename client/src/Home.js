@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import { useHistory } from "react-router-dom";
 
 
+
 function Home({ user }) {
 
   const [quote, setQuote] = useState([])
@@ -12,6 +13,16 @@ function Home({ user }) {
     const routeChange = () => {
         let path = "/bios"
         history.push(path)
+    }
+
+    const login = () => {
+      let path = "/login"
+      history.push(path)
+    }
+
+    const signup = () => {
+      let path = "/signup"
+      history.push(path)
     }
 
 
@@ -42,7 +53,13 @@ console.log(quote)
               </>)
     } else {
       return (
-      <h3 className="prompt">Please Login or Sign Up</h3>)
+              <div className="prompt">
+                <h3 className="prompt_1">Please</h3>
+                <h3 className="prompt_2" onClick={login}>Login</h3>
+                <h3 className="prompt_3">or</h3>
+                <h3 className="prompt_4" onClick={signup}>Sign Up</h3>
+              </div>
+      )
     }
   }
   
