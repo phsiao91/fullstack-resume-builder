@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import {faBiking, faPlane, faBook, faFutbol, faGamepad, faMusic, faHiking, faDumbbell, faRunning, faSwimmer, faSnowboarding, faRibbon, faCamera, faPalette, faChess } from '@fortawesome/free-solid-svg-icons'
-import { faXbox } from "@fortawesome/free-brands-svg-icons";
+import {faBiking, faPlane, faBook, faFutbol, faGamepad, faMusic, faHiking, faDumbbell, faRunning, faSwimmer, faSnowboarding, faRibbon, faCamera, faPalette, faChess, faFootballBall, faTableTennis, faBowlingBall, faPuzzlePiece, faSkiing, faSkating, faMotorcycle, faCar, faFlask, faChurch, faChartLine, faCampground, faHandHoldingHeart, faTheaterMasks, faPaintBrush, faDog } from '@fortawesome/free-solid-svg-icons'
+import { faXbox, faPlaystation, faBitcoin, faEthereum } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import Icon from "./Icon";
 
@@ -26,13 +26,31 @@ function IconNew({iconToProcess}) {
         {realIcon: faChess, textIcon: "faChess" },
         {realIcon: faPalette, textIcon: "faPalette" },
         {realIcon: faXbox, textIcon: "faXbox" },
-
+        {realIcon: faFootballBall, textIcon: "faFootballBall" },
+        {realIcon: faTableTennis, textIcon: "faTableTennis" },
+        {realIcon: faBowlingBall, textIcon: "faBowlingBall" },
+        {realIcon: faPlaystation, textIcon: "faPlaystation" },
+        {realIcon: faPuzzlePiece, textIcon: "faPuzzlePiece" },
+        {realIcon: faSkiing, textIcon: "faSkiing" },
+        {realIcon: faSkating, textIcon: "faSkating" },
+        {realIcon: faMotorcycle, textIcon: "faMotorcycle" },
+        {realIcon: faCar, textIcon: "faCar" },
+        {realIcon: faFlask, textIcon: "faFlask" },
+        {realIcon: faChurch, textIcon: "faChurch" },
+        {realIcon: faChartLine, textIcon: "faChartLine" },
+        {realIcon: faCampground, textIcon: "faCampground" },
+        {realIcon: faHandHoldingHeart, textIcon: "faHandHoldingHeart" },
+        {realIcon: faBitcoin, textIcon: "faBitcoin" },
+        {realIcon: faEthereum, textIcon: "faEthereum" },
+        {realIcon: faTheaterMasks, textIcon: "faTheaterMasks" },
+        {realIcon: faPaintBrush, textIcon: "faPaintBrush" },
+        {realIcon: faDog, textIcon: "faDog" }
     ]
 
     const mapHobbies = () => {
         let mappedIcons = newIcon.map(eachIcon =>{ 
             
-            console.log(eachIcon)
+            // console.log(eachIcon)
             if (eachIcon.textIcon == iconToProcess.description){
                 return(  
                     <div className="li_wrap">

@@ -200,7 +200,7 @@ function Resume() {
                 <div className="resume_content">
                     <div className="resume_item resume_bio">
                         <div class="title">
-                            <h2 class="bold">{bios.name}</h2>
+                            <h2 className="bold">{bios.name}</h2>
                         </div>
                         <ul>
                             <li>
@@ -231,7 +231,7 @@ function Resume() {
                     </div>
                     <div class="resume_item resume_skills">
                         <div class="title">
-                            <h3 class="bold">Skills</h3>
+                            <h2 className="bold">Skills</h2>
                         </div>
                             <ul>
                                 {mapSkills()}
@@ -239,7 +239,7 @@ function Resume() {
                     </div>
                     <div class="resume_item resume_social">
                         <div class="title">
-                            <h3 class="bold">Social</h3>
+                            <h2 className="bold">Social</h2>
                         </div>
                         <ul>
                             <li>

@@ -2,10 +2,9 @@ import React, {useState, useEffect} from "react";
 import { useHistory } from "react-router-dom";
 // import { faFutbol } from '@fortawesome/free-solid-svg-icons'
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faBiking, faPlane, faBook, faFutbol, faGamepad, faMusic, faHiking, faDumbbell, faRunning, faSwimmer, faSnowboarding, faRibbon, faCamera, faPalette, faChess } from '@fortawesome/free-solid-svg-icons'
-// import { faXbox, faFacebookSquare, faInstagramSquare, faTwitterSquare, faLinkedin, faHtml5, faReact, faJsSquare } from '@fortawesome/free-brands-svg-icons'
+import {faBiking, faPlane, faBook, faFutbol, faGamepad, faMusic, faHiking, faDumbbell, faRunning, faSwimmer, faSnowboarding, faRibbon, faCamera, faPalette, faChess, faFootballBall, faTableTennis, faBowlingBall, faPuzzlePiece, faSkiing, faSkating, faMotorcycle, faCar, faFlask, faChurch, faChartLine, faCampground, faHandHoldingHeart, faTheaterMasks, faPaintBrush, faDog } from '@fortawesome/free-solid-svg-icons'
+import { faXbox, faPlaystation, faBitcoin, faEthereum} from '@fortawesome/free-brands-svg-icons'
 import Icon from "./Icon";
-import { faXbox } from "@fortawesome/free-brands-svg-icons";
 // import { Link } from "react-router-dom";
 
 
@@ -30,6 +29,26 @@ function Hobby() {
         {realIcon: faChess, textIcon: "faChess" },
         {realIcon: faPalette, textIcon: "faPalette" },
         {realIcon: faXbox, textIcon: "faXbox" },
+        {realIcon: faFootballBall, textIcon: "faFootballBall" },
+        {realIcon: faTableTennis, textIcon: "faTableTennis" },
+        {realIcon: faBowlingBall, textIcon: "faBowlingBall" },
+        {realIcon: faPlaystation, textIcon: "faPlaystation" },
+        {realIcon: faPuzzlePiece, textIcon: "faPuzzlePiece" },
+        {realIcon: faSkiing, textIcon: "faSkiing" },
+        {realIcon: faSkating, textIcon: "faSkating" },
+        {realIcon: faMotorcycle, textIcon: "faMotorcycle" },
+        {realIcon: faCar, textIcon: "faCar" },
+        {realIcon: faFlask, textIcon: "faFlask" },
+        {realIcon: faChurch, textIcon: "faChurch" },
+        {realIcon: faChartLine, textIcon: "faChartLine" },
+        {realIcon: faCampground, textIcon: "faCampground" },
+        {realIcon: faHandHoldingHeart, textIcon: "faHandHoldingHeart" },
+        {realIcon: faBitcoin, textIcon: "faBitcoin" },
+        {realIcon: faEthereum, textIcon: "faEthereum" },
+        {realIcon: faTheaterMasks, textIcon: "faTheaterMasks" },
+        {realIcon: faPaintBrush, textIcon: "faPaintBrush" },
+        {realIcon: faDog, textIcon: "faDog" }
+
 
     ]
 
@@ -37,7 +56,7 @@ function Hobby() {
         let mappedIcons = newIcon.map(eachIcon =>{ 
             // console.log(eachTask.details)
             return (
-                    <div className="hobby_dark">
+                    <div className="hobby_select">
                         <ul>
                             <div className="li_wrap">
                                 <div className="icon">

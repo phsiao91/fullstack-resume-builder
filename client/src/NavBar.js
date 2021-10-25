@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { faCaretDown} from '@fortawesome/free-solid-svg-icons'
+import { faCaretDown, faAngleDoubleDown} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
@@ -17,6 +17,7 @@ function NavBar({ user, setUser }) {
 
   return (
   <div>
+    
     <header>
       <div className="navbar">
         <Link to="/">Home</Link>
@@ -24,7 +25,7 @@ function NavBar({ user, setUser }) {
         <div>
             <div className="dropdown">
               <button class="dropbtn">Edit Profile
-                <FontAwesomeIcon icon={faCaretDown}/>
+                <FontAwesomeIcon icon={faAngleDoubleDown}/>
               </button>
               <div className="dropdown-content">
                 <Link to="/bios">Bio</Link>

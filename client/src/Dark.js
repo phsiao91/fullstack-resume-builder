@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faMapSigns, faEnvelope, faMobileAlt, faFutbol, faGamepad, faMusic, faHiking, faGem, faBiking, faPlane, faBook, faDumbbell, faRunning, faSwimmer,faSnowboarding, faRibbon, faCamera, faChess, faPalette } from '@fortawesome/free-solid-svg-icons'
-import { faGithub, faFacebookSquare, faInstagramSquare, faTwitterSquare, faLinkedin, faHtml5, faReact, faJsSquare, faXbox } from '@fortawesome/free-brands-svg-icons'
+import {faMapSigns, faEnvelope, faMobileAlt, faGem } from '@fortawesome/free-solid-svg-icons'
+import { faGithub, faFacebookSquare, faInstagramSquare, faTwitterSquare, faLinkedin, faHtml5, faReact, faJsSquare, faCss3Alt} from '@fortawesome/free-brands-svg-icons'
 import IconNew from "./IconNew";
 
 
@@ -291,9 +291,9 @@ function Dark() {
                                 {/* <li> */}
                                     <div className="li_wrap">
                                         <div className="icon">
-                                            <FontAwesomeIcon icon={faJsSquare}/>
+                                            <FontAwesomeIcon icon={faCss3Alt}/>
                                         </div>
-                                        <div className="text">Javascript</div>
+                                        <div className="text">CSS</div>
                                     </div>
                                 {/* </li> */}
                                 {/* <li> */}
