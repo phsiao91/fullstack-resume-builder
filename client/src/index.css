@@ -59,7 +59,9 @@ body {
   font-family: "Righteous", serif;
   font-size: 100px;
   text-shadow: 0.03em 0.03em 0 hsla(230, 40%, 50%, 1);
+  margin-left: 30px;
 }
+
 .welcome:after {
   content: attr(data-shadow);
   position: absolute;
@@ -1249,3 +1251,252 @@ button:active {
 .first {
   display: inline-block;
 } */
+
+.card {
+  width: 70%;
+  padding: 30px 90px 90px 90px;
+  border: 6px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 20px 20px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 50px;
+  position: relative;
+  margin-left: 35px;
+}
+
+.card h2 {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 60px;
+  text-transform: uppercase;
+}
+
+.card .row {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid: auto / auto auto;
+  grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+  grid-gap: 30px;
+  /* display: inline; */
+}
+
+.card .row .col {
+  position: relative;
+  width: 100%;
+  margin: 30px 20px 40px 0;
+  transition: 0.5s;
+}
+
+.card .row .col {
+  position: relative;
+  width: 100%;
+  margin: 30px 20px 40px 0;
+  transition: 0.5s;
+}
+
+.card .row .form-group {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  color: #ffffff;
+}
+
+.card .row .form-group input,
+.card .row .form-group textarea {
+  position: absolute;
+  width: 90%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  font-size: 24px;
+  padding: 10px 0 10px 20px;
+  border: 5px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.3);
+  color: black;
+  border-radius: 50px;
+}
+
+.card .row .form-group label {
+  line-height: 40px;
+  color: #ffffff;
+  font-size: 24px;
+  margin: 0 0 0 30px;
+  display: block;
+  pointer-events: none;
+}
+
+.row .col:last-child {
+  margin-top: 64px;
+}
+
+.card .row .form-group input:focus,
+.card .row .form-group textarea:focus {
+  border: 5px solid #ffffff;
+  transition: all 0.5s;
+}
+
+.card .row input[type="submit"] {
+  border: 5px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  height: 80%;
+  width: 50%;
+  cursor: pointer;
+  outline: none;
+  background: transparent;
+  text-transform: uppercase;
+  color: #ffffff;
+  line-height: 40px;
+  font-size: 24px;
+  font-weight: 700;
+  border-radius: 45px;
+  transition: all 0.4s;
+  margin-top: 20px;
+}
+
+.card .row input[type="submit"]:hover {
+  border: 5px solid rgba(255, 255, 255, 1);
+  color: #ffffff;
+  transition: all 0.4s;
+}
+
+@media screen and (max-width: 900px) {
+  .card .row {
+    grid-template-columns: repeat(auto-fit, minmax(70%, 1fr));
+  }
+
+  .card-1 {
+    padding: 20px;
+  }
+
+  .card-1 h2 {
+    font-size: 34px;
+  }
+
+  .card-1 .row input[type="submit"] {
+    width: 100%;
+  }
+}
+
+.card-1 {
+  width: 70%;
+  padding: 30px 90px 90px 90px;
+  border: 6px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 20px 20px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 50px;
+  position: relative;
+  margin-left: 35px;
+}
+
+.card-1 h2 {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 60px;
+  text-transform: uppercase;
+}
+
+.card-1 .row-1 {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid: auto / auto auto;
+  grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+  grid-gap: 30px;
+  /* display: inline; */
+}
+
+.card-1 .row-1 .col-1 {
+  position: relative;
+  width: 100%;
+  margin: 30px 20px 40px 0;
+  transition: 0.5s;
+}
+
+.card-1 .row-1 .col-1 {
+  position: relative;
+  width: 100%;
+  margin: 30px 20px 40px 0;
+  transition: 0.5s;
+}
+
+.card-1 .row-1 .form-group-1 {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  color: #ffffff;
+}
+
+.card-1 .row-1 .form-group-1 input,
+.card-1 .row-1 .form-group-1 textarea {
+  position: absolute;
+  width: 500px;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  font-size: 24px;
+  padding: 10px 0 10px 20px;
+  border: 5px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.3);
+  color: black;
+  border-radius: 50px;
+}
+
+.card-1 .row-1 .form-group-1 label {
+  line-height: 40px;
+  color: #ffffff;
+  font-size: 24px;
+  margin: 0 0 0 30px;
+  display: block;
+  pointer-events: none;
+}
+
+.row-1 .col-1:last-child {
+  margin-top: 64px;
+}
+
+.card-1 .row-1 .form-group-1 input:focus,
+.card-1 .row-1 .form-group-1 textarea:focus {
+  border: 5px solid #ffffff;
+  transition: all 0.5s;
+}
+
+.card-1 .row-1 input[type="submit"] {
+  border: 5px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  height: 30%;
+  width: 50%;
+  cursor: pointer;
+  outline: none;
+  background: transparent;
+  text-transform: uppercase;
+  color: #ffffff;
+  line-height: 40px;
+  font-size: 24px;
+  font-weight: 700;
+  border-radius: 45px;
+  transition: all 0.4s;
+  margin-top: 180px;
+  margin-left: -315px;
+}
+
+.card-1 .row-1 input[type="submit"]:hover {
+  border: 5px solid rgba(255, 255, 255, 1);
+  color: #ffffff;
+  transition: all 0.4s;
+}
+
+@media screen and (max-width: 900px) {
+  .card-1 .row-1 {
+    grid-template-columns: repeat(auto-fit, minmax(70%, 1fr));
+  }
+
+  .card-1 {
+    padding: 20px;
+  }
+
+  .card-1 h2 {
+    font-size: 34px;
+  }
+
+  .card-1 .row-1 input[type="submit"] {
+    width: 100%;
+  }
+}

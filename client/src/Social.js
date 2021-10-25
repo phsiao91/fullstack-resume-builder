@@ -61,34 +61,52 @@ function Social() {
 
     return(
         <div>
-            <form onSubmit={handleSubmit}>
-                <h1>Socials</h1>
-                    <label htmlFor="name">Facebook</label>
-                    <input 
-                        type="text"
-                        name="facebook"
-                        value={facebook}
-                        onChange={(e) => setFacebook(e.target.value)}/>
-                    <label>Instagram</label>
-                    <input 
-                        type="text"
-                        name="instagram"
-                        value={instagram}
-                        onChange={(e) => setInstagram(e.target.value)}/>
-                    <label>Twiter</label>
-                    <input 
-                        type="text"
-                        name="twitter"
-                        value={twitter}
-                        onChange={(e) => setTwitter(e.target.value)}/>
-                    <label>Linkedin</label>
-                    <input 
-                        type="text"
-                        name="linkedin"
-                        value={linkedin}
-                        onChange={(e) => setLinkedin(e.target.value)}/>
-                    <button type="submit">Save</button>
-            </form>
+            <div className="card">
+                <h2>Social</h2>
+                <div className="row">
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="facebook">facebook</label>
+                            <input 
+                                type="text"
+                                name="facebook"
+                                value={facebook}
+                                onChange={(e) => setFacebook(e.target.value)}/>
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="instagram">instagram</label>
+                            <input 
+                                type="text"
+                                name="instagram"
+                                value={instagram}
+                                onChange={(e) => setInstagram(e.target.value)}/>
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="twitter">twitter</label>
+                            <input 
+                                type="text"
+                                name="twitter"
+                                value={twitter}
+                                onChange={(e) => setTwitter(e.target.value)}/>
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="linkedin">linkedin</label>
+                            <input 
+                                type="text"
+                                name="linkedin"
+                                value={linkedin}
+                                onChange={(e) => setLinkedin(e.target.value)}/>
+                        </div>
+                    </div>
+                    <input type="submit" onClick={handleSubmit} value="Submit"></input>
+                </div>
+            </div>
             <div className="flow">
                 <div class="multi-button">
                     <button onClick={back}>Back</button>

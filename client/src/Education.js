@@ -74,42 +74,59 @@ function Education() {
 
         <div>
             
-            <form onSubmit={handleSubmit}>
-                <h1>Education</h1>
-                    <label htmlFor="title">school</label>
-                    <input 
-                        type="text"
-                        name="school"
-                        value={school}
-                        onChange={(e) => setSchool(e.target.value)}/>
-                    <label>degree</label>
-                    <input 
-                        type="text"
-                        name="degree"
-                        value={degree}
-                        onChange={(e) => setDegree(e.target.value)}/>
-                    <label>Start Date</label>
-                    <input
-                        type="date"
-                        name="startDate"
-                        value={start_date}
-                        onChange={(e) => setStartDate(e.target.value)}
-                        />
-                    <label>End Date</label>
-                    <input
-                        type="date"
-                        name="endDate"
-                        value={end_date}
-                        onChange={(e) => setEndDate(e.target.value)}/>
-                    <button type="submit">Save</button> 
-                </form>
-                <div className="flow">
-                    <div class="multi-button">
-                        <button onClick={back}>Back</button>
-                        <button onClick={next}>Next</button>
+            <div className="card">
+                <h2>Education</h2>
+                <div className="row">
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="school">school</label>
+                            <input 
+                                type="text"
+                                name="school"
+                                value={school}
+                                onChange={(e) => setSchool(e.target.value)}/>
+                        </div>
                     </div>
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="degree">degree</label>
+                            <input 
+                                type="text"
+                                name="degree"
+                                value={degree}
+                                onChange={(e) => setDegree(e.target.value)}/>
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="start_date">start date</label>
+                            <input 
+                                type="date"
+                                name="address"
+                                value={start_date}
+                                onChange={(e) => setStartDate(e.target.value)}/>
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="end_date">end date</label>
+                            <input 
+                                type="date"
+                                name="phone"
+                                value={end_date}
+                                onChange={(e) => setEndDate(e.target.value)}/>
+                        </div>
+                    </div>
+                    <input type="submit" onClick={handleSubmit} value="Submit"></input>
                 </div>
-                <div className="blockquote-wrapper">
+            </div>
+            <div className="flow">
+                <div class="multi-button">
+                    <button onClick={back}>Back</button>
+                    <button onClick={next}>Next</button>
+                </div>
+            </div>
+            <div className="blockquote-wrapper">
                 <div className="blockquote">
                     <h2>{quote.text}</h2>
                     <h4>{quote.author}</h4>

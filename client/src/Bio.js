@@ -33,7 +33,7 @@ function Bio() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        e.target.reset()
+        // e.target.reset()
             fetch("/bios", {
                 method: "POST",
                 headers: {
@@ -97,47 +97,72 @@ function Bio() {
 
     return(
         <div className="bioForm">
-            
-            <form onSubmit={handleSubmit}>
-                <h1>Bio</h1>
-                <label htmlFor="image">image</label>
-                    <input 
-                        type="text"
-                        name="image"
-                        value={image}
-                        onChange={(e) => setImage(e.target.value)}/>
-                    <label htmlFor="name">name</label>
-                    <input 
-                        type="text"
-                        name="name"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}/>
-                    <label>address</label>
-                    <input 
-                        type="text"
-                        name="address"
-                        value={address}
-                        onChange={(e) => setAddress(e.target.value)}/>
-                    <label>phone</label>
-                    <input 
-                        type="text"
-                        name="phone"
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}/>
-                    <label>email</label>
-                    <input 
-                        type="text"
-                        name="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}/>
-                    <label>github</label>
-                    <input 
-                        type="text"
-                        name="github"
-                        value={github}
-                        onChange={(e) => setGithub(e.target.value)}/>
-                    <button type="submit" >Save</button>
-            </form>
+            <div className="card">
+                <h2>Bio</h2>
+                <div className="row">
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="image">image</label>
+                            <input 
+                                type="text"
+                                name="image"
+                                value={image}
+                                onChange={(e) => setImage(e.target.value)}/>
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="name">name</label>
+                            <input 
+                                type="text"
+                                name="name"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}/>
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="address">address</label>
+                            <input 
+                                type="text"
+                                name="address"
+                                value={address}
+                                onChange={(e) => setAddress(e.target.value)}/>
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="phone">phone</label>
+                            <input 
+                                type="text"
+                                name="phone"
+                                value={phone}
+                                onChange={(e) => setPhone(e.target.value)}/>
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="email">email</label>
+                            <input 
+                                type="text"
+                                name="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}/>
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="github">github</label>
+                            <input 
+                                type="text"
+                                name="github"
+                                value={github}
+                                onChange={(e) => setGithub(e.target.value)}/>
+                        </div>
+                    </div>
+                    <input type="submit" onClick={handleSubmit} value="Submit"></input>
+                </div>
+            </div>
             <div className="flow">
                 <div class="multi-button">
                     <button onClick={back}>Back</button>

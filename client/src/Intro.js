@@ -59,18 +59,22 @@ function Intro() {
 
     return(
         <div>
-            <form onSubmit={handleSubmit}>
-                <h1>Summary</h1>
-                
-                <label htmlFor="summary">Professional summary</label>
-                    <input
-                        className="summary"
-                        type="text"
-                        name="summary"
-                        value={summary}
-                        onChange={(e) => setSummary(e.target.value)}/>
-                <button type="submit">Save</button>
-            </form>
+            <div className="card-1">
+                <h2>Summary</h2>
+                <div className="row-1">
+                    <div className="col-1">
+                        <div className="form-group-1">
+                            <label htmlFor="summary">About Me</label>
+                            <input 
+                                type="text"
+                                name="summary"
+                                value={summary}
+                                onChange={(e) => setSummary(e.target.value)}/>
+                        </div>
+                    </div>
+                    <input className="odd" type="submit" onClick={handleSubmit} value="Submit"></input>
+                </div>
+            </div>
             <div className="flow">
                 <div class="multi-button">
                     <button onClick={back}>Back</button>

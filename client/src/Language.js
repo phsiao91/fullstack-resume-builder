@@ -59,23 +59,32 @@ function Language() {
 
     return(
         <div>
-            
-            <form onSubmit={handleSubmit}>
-                <h1>Software Languages</h1>
-                    <label htmlFor="name">Language</label>
-                    <input 
-                        type="text"
-                        name="expertise"
-                        value={expertise}
-                        onChange={(e) => setExpertise(e.target.value)}/>
-                    <label>Percentage of Competence</label>
-                    <input 
-                        type="text"
-                        name="rating"
-                        value={rating}
-                        onChange={(e) => setRating(e.target.value)}/>
-                    <button type="submit">Save</button>
-            </form>
+            <div className="card">
+                <h2>Programming Languages</h2>
+                <div className="row">
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="expertise">expertise</label>
+                            <input 
+                                type="text"
+                                name="expertise"
+                                value={expertise}
+                                onChange={(e) => setExpertise(e.target.value)}/>
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="rating">rating</label>
+                            <input 
+                                type="text"
+                                name="rating"
+                                value={rating}
+                                onChange={(e) => setRating(e.target.value)}/>
+                        </div>
+                    </div>
+                    <input type="submit" onClick={handleSubmit} value="Submit"></input>
+                </div>
+            </div>
             <div className="flow">
                 <div class="multi-button">
                     <button onClick={back}>Back</button>

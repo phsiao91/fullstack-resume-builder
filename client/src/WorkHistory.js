@@ -89,47 +89,68 @@ function WorkHistory() {
 
     return(
     <div>
-        <div className="wh-form" >
-            <form onSubmit={handleSubmit}>
-                <h1>Work History</h1>
-                    <label htmlFor="title">title</label>
-                    <input 
-                        type="text"
-                        name="title"
-                        value={title}
-                        onChange={(e) => setTitle(e.target.value)}/>
-                    <label>company</label>
-                    <input 
-                        type="text"
-                        name="company"
-                        value={company}
-                        onChange={(e) => setCompany(e.target.value)}/>
-                    <label>Start Date</label>
-                    <input
-                        type="date"
-                        name="startDate"
-                        value={start_date}
-                        onChange={(e) => setStartDate(e.target.value)}
-                        />
-                    <label>End Date</label>
-                    <input
-                        type="date"
-                        name="endDate"
-                        value={end_date}
-                        onChange={(e) => setEndDate(e.target.value)}/>
-                    <button type="submit">Save</button>
-            </form>
-        </div>
-            <div className="task_form" >
-                <form onSubmit= {taskSubmit}>
-                    <label>tasks</label>
-                        <input 
-                        type="text"
-                        name="tasks"
-                        value={details}
-                        onChange={(e) => setDetails(e.target.value)}/>
-                    <button type="submit">Save</button>
-                </form>
+        <div className="card">
+                <h2>Work History</h2>
+                <div className="row">
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="title">title</label>
+                            <input 
+                                type="text"
+                                name="title"
+                                value={title}
+                                onChange={(e) => setTitle(e.target.value)}/>
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="company">company</label>
+                            <input 
+                                type="text"
+                                name="company"
+                                value={company}
+                                onChange={(e) => setCompany(e.target.value)}/>
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="start_date">start date</label>
+                            <input 
+                                type="date"
+                                name="address"
+                                value={start_date}
+                                onChange={(e) => setStartDate(e.target.value)}/>
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="end_date">end date</label>
+                            <input 
+                                type="date"
+                                name="phone"
+                                value={end_date}
+                                onChange={(e) => setEndDate(e.target.value)}/>
+                        </div>
+                    </div>
+                    <input type="submit" onClick={handleSubmit} value="Submit"></input>
+                </div>
+            </div>
+            <br></br>
+            <br></br>
+            <div className="card-1">
+                <div className="row-1">
+                    <div className="col-1">
+                        <div className="form-group-1">
+                            <label htmlFor="details">task</label>
+                            <input 
+                                type="text"
+                                name="details"
+                                value={details}
+                                onChange={(e) => setDetails(e.target.value)}/>
+                        </div>
+                    </div>
+                    <input className="odd" type="submit" onClick={taskSubmit} value="Submit"></input>
+                </div>
             </div>
             <div className="flow">
                 <div class="multi-button">
