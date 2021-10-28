@@ -1217,6 +1217,10 @@ button:active {
   background: #fff;
 }
 
+/* .hobby_select .li_wrap:focus {
+  background-color: #fff;
+} */
+
 .hobby_select .li_wrap:hover .icon,
 .hobby_select .li_wrap:hover .text {
   color: black;
@@ -1224,12 +1228,6 @@ button:active {
 
 .hobby_select .li_wrap:active {
   transform: translate(0em, 0.75em);
-}
-
-.hobby_select .li_wrap:active .icon,
-.hobby_select .li_wrap:active .text {
-  transform: translate3d(0, 0, -1em);
-  box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.25em 0 0 var(--colorShadeB);
 }
 
 .prompt_2:hover {

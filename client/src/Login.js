@@ -21,29 +21,35 @@ function Login({ setUser }) {
   }
 
   return (
-    <div className="login">
-      <form>
-        <h1>Login</h1>
-        <label htmlFor="username">Username</label>
-        <input
-          type="text"
-          id="username"
-          autoComplete="off"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          autoComplete="current-password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <Link to="/">
-        <button onClick={handleSubmit} >Login</button>
-        </Link>
-      </form>
+    <div>
+      <div className="card">
+                <h2>Login</h2>
+                <div className="row">
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="username">username</label>
+                            <input 
+                                type="text"
+                                name="username"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}/>
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="password">password</label>
+                            <input 
+                                type="password"
+                                name="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}/>
+                        </div>
+                    </div>
+                    <Link to="/">
+                    <input type="submit" onClick={handleSubmit} value="Login"></input>
+                    </Link>
+                </div>
+            </div>
       
     </div>
   );

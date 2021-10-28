@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { faCaretDown, faAngleDoubleDown} from '@fortawesome/free-solid-svg-icons'
+import { faAngleDoubleDown} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 function NavBar({ user, setUser }) {
+
+
   function handleLogoutClick() {
     fetch("/logout", { method: "DELETE" }).then((r) => {
       if (r.ok) {

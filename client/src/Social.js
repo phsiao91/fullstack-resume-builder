@@ -62,7 +62,7 @@ function Social() {
     return(
         <div>
             <div className="card">
-                <h2>Social</h2>
+                <h2>Social Links</h2>
                 <div className="row">
                     <div className="col">
                         <div className="form-group">

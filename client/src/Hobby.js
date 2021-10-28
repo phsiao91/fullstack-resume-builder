@@ -52,19 +52,24 @@ function Hobby() {
 
     ]
 
+    const changeColor = (e) => {
+        e.target.setAttribute('style', 'color:white')
+    }
+
     const mapIcons = () => {
         let mappedIcons = newIcon.map(eachIcon =>{ 
             // console.log(eachTask.details)
             return (
-                    <div className="hobby_select">
+                    <div className="hobby_select" >
                         <ul>
-                            <div className="li_wrap">
-                                <div className="icon">
+                            <div className="li_wrap" >
+                                <div className="icon" onClick={changeColor}>
                                     <Icon iconToRender={eachIcon} />
                                 </div>
                             </div>
                         </ul>
-                    </div>)
+                    </div>
+                )
             // return (<FontAwesomeIcon className="icon" icon={eachIcon} />)
         })
         // console.log(mappedTasks[0])
