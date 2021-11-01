@@ -257,6 +257,7 @@ header button {
   overflow: auto;
   background-color: #333;
   font-family: Arial;
+  display: inline-flex;
 }
 
 /* Links inside the navbar */

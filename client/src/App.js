@@ -15,7 +15,8 @@ import Account from './Account';
 import Social from './Social';
 import Hobby from './Hobby';
 import Dark from './Dark';
-import IconNew from './IconNew';
+// import IconNew from './IconNew';
+import Cal from './Cal';
 
 
 function App() {
@@ -59,6 +60,9 @@ function App() {
             </Route>
             <Route path="/hobbies">
               <Hobby/>
+            </Route>
+            <Route path="/cal">
+              <Cal/>
             </Route>
             <Route path="/dark">
               <Dark/>

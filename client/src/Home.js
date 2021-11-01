@@ -43,7 +43,7 @@ console.log(quote)
     if (user) {
       return (<div className="first">
                 {/* <div className="prompt"> */}
-                  <h4 className="welcome"> Welcome, {user.username}!</h4>
+                  <h4 className="welcome"> Welcome, {user.username}</h4>
                 {/* </div> */}
                 <div>
                   <p className="start" onClick={routeChange}>Click here to get started!!!</p>

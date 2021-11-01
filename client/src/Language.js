@@ -74,7 +74,7 @@ function Language() {
                     </div>
                     <div className="col">
                         <div className="form-group">
-                            <label htmlFor="rating">rating</label>
+                            <label htmlFor="rating">rating %</label>
                             <input 
                                 type="text"
                                 name="rating"

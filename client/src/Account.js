@@ -4,9 +4,10 @@ function Account({user}) {
 
     console.log(user.id)
     const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
 
 
-    const updateName = (e) => {
+    const updateAccount = (e) => {
         e.preventDefault()
         fetch(`/users/${user.id}`, {
         method: 'PATCH',
@@ -15,7 +16,8 @@ function Account({user}) {
     },
         credentials: 'include',
         body: JSON.stringify({
-            username
+            username,
+            password
     }),
 })
     .then(res => {
@@ -47,18 +49,33 @@ const handleDeleteUserAccount =(e)=> {
 
     return(
         <div>
-            <form onSubmit={updateName}>
-                <h2>Update username</h2>
-                    <input 
-                        type="text"
-                        name="username"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}/>
-                <button type="submit">Update</button>
-            </form>
-            <form>
-                <button onClick={handleDeleteUserAccount}>Delete Account</button>
-            </form>
+            <div className="card">
+                <h2>Update Account</h2>
+                <div className="row">
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="username">username</label>
+                            <input 
+                                type="text"
+                                name="username"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}/>
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="password">password</label>
+                            <input 
+                                type="password"
+                                name="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}/>
+                        </div>
+                    </div>
+                    <input type="submit" onClick={updateAccount} value="Update"></input>
+                    {/* <input type="submit" onClick={handleDeleteUserAccount} value="Delete Account"></input> */}
+                </div>
+            </div>
         </div>
     )
 }
