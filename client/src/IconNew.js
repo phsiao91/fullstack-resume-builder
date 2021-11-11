@@ -58,16 +58,10 @@ function IconNew({iconToProcess}) {
                             <FontAwesomeIcon icon={eachIcon.realIcon}/>
                         </div>
                     </div>
-    
-
                 )
             }
-            // let hob = eachIcon.realIcon.charAt(0).toUpperCase() + eachIcon.realIcon.slice(1)
-            // console.log(hob)
-            // return (<Icon iconToRender={eachIcon} />)
-
         })
-        // console.log(mappedTasks[0])
+
         return mappedIcons
         
     }

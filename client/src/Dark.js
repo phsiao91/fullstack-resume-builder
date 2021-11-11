@@ -95,16 +95,10 @@ function Dark() {
         let mappedIcons = hobby.map(eachIcon =>{ 
             
             console.log(eachIcon)
-            // let hob = eachIcon.description.charAt(0).toUpperCase() + eachIcon.description.slice(1)
-            // console.log(hob)
-            // return (<Icon iconToRender={eachIcon} />)
             return (
-                // <div className="li_wrap">
-                //     <div className="icon">
                         <div>
                         <IconNew iconToProcess={eachIcon}/>
                         </div>
-                //     </div>
             )
         })
         // console.log(mappedTasks[0])
@@ -314,30 +308,6 @@ function Dark() {
                         <div className="hobbies_dark">
                             <ul>
                                 {mapHobbies()}
-                                {/* <div className="li_wrap">
-                                    <div className="icon">
-                                        <FontAwesomeIcon icon={faFutbol}/>
-                                    </div>
-                                    <div className="text">soccer</div>
-                                </div>
-                                <div className="li_wrap">
-                                    <div className="icon">
-                                        <FontAwesomeIcon icon={faGamepad}/>
-                                    </div>
-                                    <div className="text">gaming</div>
-                                </div>
-                                <div className="li_wrap">
-                                    <div className="icon">
-                                        <FontAwesomeIcon icon={faMusic}/>
-                                    </div>
-                                    <div className="text">music</div>
-                                </div>
-                                <div className="li_wrap">
-                                    <div className="icon">
-                                        <FontAwesomeIcon icon={faHiking}/>
-                                    </div>
-                                    <div className="text">hiking</div>
-                                </div> */}
                             </ul>
                         </div>
                     </div>
